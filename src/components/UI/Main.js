@@ -3,16 +3,21 @@ import { Header } from '../UI/Header';
 import '../../styles/UI/Main.css';
 import { Titulo } from './Titulo';
 import { Tablero } from '../Tablero/Tablero';
-
+const data = {
+    grupoEmpresarial:'Grupo Empresarial DEMO',
+    usuario:'Usuario SE 01',
+    rol:'Cliente'
+}
+const { grupoEmpresarial, usuario, rol } = data;
 export const Main = () => {
     return (
         <>
             <Header/>
             <div className='main'>
                 <div className='info'>
-                    <p>Grupo Empresarial</p>
-                    <p>Usuario</p>
-                    <p>Rol</p>
+                    <p>Grupo Empresarial: {grupoEmpresarial}</p>
+                    <p>Usuario: {usuario}</p>
+                    <p>Rol: {rol}</p>
                 </div>
                 <div className="contenedor">
                     <Titulo texto='Soluciones Tecnológicas'/>
