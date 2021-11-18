@@ -1,0 +1,64 @@
+
+.login-container{
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container img{
+    margin: 5rem 0rem;
+    width: 100%;
+}
+
+.login-container form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    justify-content: center;
+}
+
+.login-container form input{
+    width: 100%;
+    height: 20px;
+    margin: .5rem;
+    padding: 10px;
+    border: 1px solid #BFBFBF;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: FontAwesome, 'PT Sans Narrow', sans-serif;
+}
+
+.login-container form input::placeholder{
+    font-weight: 400;
+    color: #0C818E;
+}
+
+input:focus, select:focus, select, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.login-container form input:focus{
+    border: 2px solid #0C818E;
+}
+
+.login-container form .btnEntrar{
+    background: #0C818E;
+    color: white;
+    height: 40px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    display: block;
+}
+
+.login-container span{
+    font-weight: bold;
+    color: #75B735;
+}
