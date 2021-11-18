@@ -1,0 +1,15 @@
+.main{
+    text-align: right;
+    padding: 0rem 4rem;
+}
+.info{
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    text-align: left;
+}
+
+.contenedor{
+    text-align: center;
+}
+

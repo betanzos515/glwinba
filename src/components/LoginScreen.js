@@ -1,7 +1,7 @@
 import React from 'react'
-import logo from '../../imagenes/glwinba.png';
-
-import '../../styles/loginStyles.css'
+import logo from '../imagenes/glwinba.png';
+import { Header } from './UI/Header';
+import '../styles/loginStyles.css';
 export  const LoginScreen = () => {
     return (
         <div className="login-container">

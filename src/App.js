@@ -1,9 +1,9 @@
 import { Header } from "./components/UI/Header";
-//import { AppRoute } from "./routes/AppRoute";
+import { AppRoute } from "./routes/AppRoute";
 
 function App() {
   return (
-    <Header/>    
+    <AppRoute/> 
   );
 }
 

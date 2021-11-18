@@ -4,16 +4,22 @@ import logoHeader from '../../imagenes/glwinba-header.png';
 
 
 export const Header = () => {
-    let mensaje = 'Iniciar Sesión';
+    let mensaje = 'Iniciar Sesion';
+    const login = true;
+    if(login){
+        mensaje = 'Cerrar Sesión';
+    }
     return (
         <header className='header'>
             <div className="logoContainer">
-                <img src={logoHeader}/>
+                <a href="/">
+                    <img src={logoHeader} alt='logo'/>
+                </a>
             </div>
 
             <nav>
                 <ul>
-                    <a href='#'>{mensaje}</a>
+                    <a href='/' className='btnInicio' >{mensaje}</a>
                 </ul>
             </nav>
         </header>

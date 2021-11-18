@@ -17,18 +17,19 @@
     flex-wrap: wrap;
     width: 65%;
     justify-content: center;
+    font-size: 1.8rem;
 }
 
 .login-container form input{
     width: 100%;
-    height: 20px;
-    margin: .5rem;
+    height: 4rem;
+    margin: .9rem;
     padding: 10px;
     border: 1px solid #BFBFBF;
     color: black;
     font-weight: bold;
-    font-size: 1.5rem;
-    font-family: FontAwesome, 'PT Sans Narrow', sans-serif;
+    font-size: 2rem;
+   
 }
 
 .login-container form input::placeholder{
@@ -51,11 +52,12 @@ input:focus, select:focus, select, input.form-control:focus {
 .login-container form .btnEntrar{
     background: #0C818E;
     color: white;
+    margin-top: 1rem;
+    border:none;
     height: 40px;
     width: 100%;
-    font-size: 1rem;
-    font-weight: 400;
-    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .login-container span{

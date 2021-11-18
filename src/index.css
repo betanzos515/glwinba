@@ -2,10 +2,16 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 *::before, *::after{
   box-sizing: inherit;
+}
+
+html{
+  font-size: 62.5%; /*Estandarizamos a 10px el rem*/
 }
 
 body {
@@ -15,9 +21,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.5rem;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.btnInicio{
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  width: 30%;
+  background: #0C818E;
+  border-radius: .5rem;
+  color: white;
+}
+
+h1{
+  font-size: 3rem;
+  font-size: 4.5rem;
 }

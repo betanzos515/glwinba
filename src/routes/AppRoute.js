@@ -1,8 +1,9 @@
 import React from 'react'
-import { LoginScreen } from '../components/login/LoginScreen'
+import { Main } from '../components/UI/Main'
+//import { LoginScreen } from '../components/LoginScreen'
 
 export const AppRoute = () => {
     return (
-        <LoginScreen />
+        <Main/>
     )
 }
