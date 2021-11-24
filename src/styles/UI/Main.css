@@ -1,15 +1,18 @@
+@import '../custom.css';
+
 .main{
     text-align: right;
     padding: 0rem 4rem;
 }
+
 .info{
     text-align: center;
     display: inline-block;
     font-weight: bold;
     text-align: left;
+    font-size: 2rem;
 }
 
 .contenedor{
     text-align: center;
 }
-

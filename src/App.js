@@ -1,9 +1,12 @@
-import { Header } from "./components/UI/Header";
+import { Provider } from "react-redux";
 import { AppRoute } from "./routes/AppRoute";
+import store from "./store/store";
 
 function App() {
   return (
-    <AppRoute/> 
+    <Provider store={store}>
+      <AppRoute/>
+    </Provider>
   );
 }
 

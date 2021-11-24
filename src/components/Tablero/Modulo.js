@@ -1,10 +1,12 @@
-import React from 'react'
 import '../../styles/UI/Modulo.css';
-export const Modulo = ({titulo}) => {
+
+import { Link } from 'react-router-dom'
+
+export const Modulo = ({ titulo, bg='' }) => {
     return (
-        <div className='modulo'>
-            <i class="far fa-address-card"></i>
-            <p>{titulo}</p>
-        </div>
+        <Link to='/productos/servicios-especializados' className={ `modulo ${bg}` }>
+            <i className="far fa-address-card"></i>
+            <p>{ titulo }</p>
+        </Link>
     )
 }

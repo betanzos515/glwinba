@@ -1,19 +1,45 @@
+@import '../custom.css';
+
 .modulo{
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: calc(23% - 2rem);
-    min-height: 16rem;
-    background: #ff0000;
-    margin: 1rem;
+    flex-basis: calc(25% - 2rem);
+    min-height: 20rem;
+    border-radius: .5rem;
     justify-content: center;
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    padding: 1rem;
+    padding: .5rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+
+.modulo:hover{
+    transform: scale(1.1);
 }
 
 i{
     font-size: 7rem;
     margin-bottom: 2rem;
+    font-weight: lighter;
+}
+
+.bgVerde{
+    background: var(--bgVerde);
+}
+.bgNaranja{
+    background: var(--bgNaranja);
+}
+.bgAzul{
+    background: var(--bgAzul);
+}
+.bgMorado{
+    background: var(--bgMorado);
+}
+
+.bgDeshabilitado{
+    background: #F6F6F6;
+    color: #D3D3D3;
 }
