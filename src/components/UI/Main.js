@@ -23,7 +23,6 @@ export const Main = () => {
                     <Titulo texto='Soluciones Tecnológicas'/>
                     <Tablero/>
                 </div>
-                
             </div>
         </>
     )
