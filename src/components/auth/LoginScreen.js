@@ -1,14 +1,26 @@
-import React, { useState } from 'react'
 import logo from '../../imagenes/glwinba.png';
 import '../../styles/loginStyles.css';
-//import { useNavigate } from 'react-router-dom';
+
+import { useState } from 'react'
+
+//import { useDispatch } from 'react-redux';
+//import { autenticarUsuario } from '../../actions/auth';
+
 
 export  const LoginScreen = ( ) => {
+    
+    /* Globales */
+    //const dispatch = useDispatch();
 
+    /* Estados */
     const [ stateFormulario, setStateFormulario ] = useState({
         usuario:'',
         password:''
     })
+    //const [isChecked ,setIsChecked] = useState(true);
+
+    
+    /* Funciones */
     const handleChange = (e) =>{
         setStateFormulario({
             ...stateFormulario,
@@ -16,9 +28,11 @@ export  const LoginScreen = ( ) => {
         });
     }
 
-    const handleClick = e =>{
+    const handleClick = async e => {
         e.preventDefault();
-
+        //const { usuario, password } = stateFormulario;
+        //const resultado = autenticarUsuario(usuario,password);
+        //dispatch(resultado);
     }
 
     return (
@@ -38,7 +52,7 @@ export  const LoginScreen = ( ) => {
                     onChange={handleChange}
                 />
 
-                <button className='btnEntrar' onClick={handleClick}>Entrar</button>
+                <button className='btnEntrar' onClick={ handleClick }>Entrar</button>
                 <p>¿Eres un cliente nuevo?<a href='/'>Registrate</a></p>
             </form>
         </div>

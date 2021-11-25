@@ -44,8 +44,9 @@ const peticionLogin = ( usuario, password )=>{
     }
 }
 
-const autenticarUsuario = ( usuario, password )=>{
-    const resultado = peticionLogin( usario, password );
+export const autenticarUsuario = async ( usuario, password )=>{
+    const resultado = await peticionLogin( usuario, password );
+    console.log(resultado);
     return resultado;
 }
 
