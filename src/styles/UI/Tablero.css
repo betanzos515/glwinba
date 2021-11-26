@@ -1,8 +1,8 @@
 .tablero{
-    width: 55%;
+    width: 60%;
     display: flex;
     margin: 0 auto;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }

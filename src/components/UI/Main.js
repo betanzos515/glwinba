@@ -15,9 +15,9 @@ export const Main = () => {
             <Header/>
             <div className='main'>
                 <div className='info'>
-                    <p>Grupo Empresarial: {grupoEmpresarial}</p>
-                    <p>Usuario: {usuario}</p>
-                    <p>Rol: {rol}</p>
+                    <p>{grupoEmpresarial}</p>
+                    <p>{usuario}</p>
+                    <p>{rol}</p>
                 </div>
                 <div className="contenedor">
                     <Titulo texto='Soluciones Tecnológicas'/>
