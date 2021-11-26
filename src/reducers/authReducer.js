@@ -3,7 +3,7 @@ import { types } from "../types/types";
 const initialState = {
     correo:'DEFAUL',
     cargando:false,
-    isLogged : false
+    isLogged :true
 }
 export const authReducer = (state = initialState , action) =>{
     switch( action ){
