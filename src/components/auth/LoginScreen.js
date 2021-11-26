@@ -1,57 +1,61 @@
 import logo from '../../imagenes/glwinba.png';
 import '../../styles/loginStyles.css';
 
-import { useState } from 'react'
 
-//import { useDispatch } from 'react-redux';
-//import { autenticarUsuario } from '../../actions/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { iniciarLogin, autenticarUsuario, terminoLogin } from '../../actions/auth';
+import { useForm } from '../../hooks/useForm';
+import { asignarUsuario } from '../../actions/user';
 
 
 export  const LoginScreen = ( ) => {
     
     /* Globales */
-    //const dispatch = useDispatch();
-
-    /* Estados */
-    const [ stateFormulario, setStateFormulario ] = useState({
+    const dispatch = useDispatch();
+    const { error, mensaje } = useSelector(state => state.ui);
+    
+    const [  values, handleInputChange, resetForm ] = useForm({
         usuario:'',
         password:''
-    })
-    //const [isChecked ,setIsChecked] = useState(true);
+    });
 
-    
-    /* Funciones */
-    const handleChange = (e) =>{
-        setStateFormulario({
-            ...stateFormulario,
-            [e.target.name] :  e.target.value
-        });
-    }
+    const { usuario, password } = values;
 
     const handleClick = async e => {
         e.preventDefault();
-        //const { usuario, password } = stateFormulario;
-        //const resultado = autenticarUsuario(usuario,password);
-        //dispatch(resultado);
+
+        dispatch(iniciarLogin());
+        const resultado = await autenticarUsuario(usuario,password);
+        if(resultado){
+            dispatch(asignarUsuario(usuario));
+            console.log('Usuario asignado...');
+        }else{
+            console.log('Error de autenticación...');
+        }
+
+        dispatch(terminoLogin());
+        resetForm();
     }
 
     return (
         <div className="login-container">
-           <img src={logo} alt="Logo GLWinba"/>
+           <img src={ logo } alt="Logo GLWinba"/>
            <form action="#">
+                { error ? <p>{ mensaje }</p> : null }
                 <input 
                     type="text" 
                     placeholder='Usuario'
                     name='usuario'
-                    onChange={handleChange}
+                    onChange={ handleInputChange }
+                    value={ usuario }
                 />               
                 <input 
                     type="password" 
                     placeholder='Contraseña'
                     name='password'
-                    onChange={handleChange}
+                    onChange={ handleInputChange }
+                    value={ password }
                 />
-
                 <button className='btnEntrar' onClick={ handleClick }>Entrar</button>
                 <p>¿Eres un cliente nuevo?<a href='/'>Registrate</a></p>
             </form>

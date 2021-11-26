@@ -1,35 +1,18 @@
 import { types } from "../types/types"
 
-
-
 const initialState = {
-    nombre: '',
-    empresa:'',
-    modulosHabilitados:[],
-    autenticado : false,
-    roles : ['cliente','proveedor'],
-    perfiles: [],
-    cargando: false
+    usuario:{}
 }
 
 export const userReducer = (state=initialState, action)=>{
-    switch(action){
-        case types.autenticando:
+    switch(action.type){
+        case types.asignarUsuario:
             return{
-
+                ...state,
+                usuario: action.payload
             }
-        case types.asignarRoles:
-            return{
-
-            }
-        case types.asignarPerfiles:
-            return {
-
-            }
-        case types.asignarModulos:
-            return{
-
-            }
+        case types.removerUsuario:
+            return initialState
         default:
             return state
     }
