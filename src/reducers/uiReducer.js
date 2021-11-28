@@ -5,19 +5,15 @@ const initialState = {
     mensaje:''
 }
 export const uiReducer = ( state = initialState, action )=>{
-    switch(action){
+    switch(action.type){
         case types.establecerError : 
             return {
                 ...state,
                 error: true,
-                mensaje:action.payload.msg
+                mensaje:action.payload.mensaje
             }
         case types.removerError:
-            return{
-                ...state,
-                error: false,
-                mensaje: ''
-            }
+            return initialState
         default:
             return state
     }

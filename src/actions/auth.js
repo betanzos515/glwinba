@@ -1,52 +1,29 @@
 import { types } from '../types/types'; 
-
-const usuariosDemo = [
-    {
-        usuario: 'prueba@prueba.com',
-        password: 'prueba123',
-        roles:[]
-    },
-    {
-        usuario: 'pruebaperfiles@prueba.com',
-        password: 'prueba123',
-        roles:['cliente,proveedor']
-    },
-    {
-        usuario: 'pruebaliente@prueba.com',
-        password: 'prueba123',
-        roles:['cliente']
-    },
-    {
-        usuario: 'pruebaproveedor@prueba.com',
-        password: 'prueba123',
-        roles:['provedor']
-    }
-]
+import { usuariosDemo } from '../helpers/dataUsuario';
 
 const peticionLogin = ( usuario, password )=>{
-    const validacion = usuariosDemo.some( 
-        users => users.nombre === usuario && users.password === password );
-    if(validacion)
-        return{
-            action: types.login,
-            payload:{
-                correo: usuario,
-                isLogged: true
-            }
-        }
-    else{
-        return {
-            action: types.establecerError,
-            payload: {
-                mensaje:'Usuario no encontrado',
-            }
-        }
+    return new Promise((resolve =>{
+        setTimeout(()=>{
+            const resultado = usuariosDemo.some( users => users.usuario === usuario && users.password === password ); 
+            resolve(resultado);
+        },3000);
+    }))
+}
+
+
+export const iniciarLogin = () =>{
+    return {
+        type: types.iniciarLogin
+    }
+}
+export const terminoLogin = () =>{
+    return{
+        type: types.terminarLogin
     }
 }
 
 export const autenticarUsuario = async ( usuario, password )=>{
-    const resultado = await peticionLogin( usuario, password );
-    console.log(resultado);
-    return resultado;
+    return await peticionLogin( usuario, password );
 }
+
 

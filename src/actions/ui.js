@@ -1,7 +1,12 @@
 import { types } from "../types/types";
 
-export const establecerError = ( ) =>{
-    action:types.establecerError
+export const establecerError = ( mensaje ) =>{
+    return{
+        type: types.establecerError,
+        payload:{
+            mensaje
+        }
+    }
 }
 
 export const removerError = ()=>{
