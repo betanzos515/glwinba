@@ -7,7 +7,7 @@ const initialState = {
     empresa:'',
     modulosHabilitados:[],
     autenticado : false,
-    roles : ['cliente','proveedor'],
+    roles : ['proveedor','cliente'],
     perfiles: [],
     cargando: false
 }
