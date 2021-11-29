@@ -1,25 +1,22 @@
 import '../../styles/UI/header.css'
 import React from 'react'
 import logoHeader from '../../imagenes/glwinba-header.png';
+import { Link } from 'react-router-dom';
 
 
 export const Header = () => {
     let mensaje = 'Iniciar Sesion';
-    const login = true;
-    if(login){
-        mensaje = 'Cerrar Sesión';
-    }
+
     return (
         <header className='header'>
             <div className="logoContainer">
-                <a href="/">
+                <Link to="/dashboard">
                     <img src={logoHeader} alt='logo'/>
-                </a>
+                </Link>
             </div>
-
             <nav>
                 <ul>
-                    <a href='/' className='btnInicio' >{mensaje}</a>
+                    <Link to='/login' className='btnInicio' >{mensaje}</Link>
                 </ul>
             </nav>
         </header>

@@ -1,7 +1,16 @@
 import { types } from "../types/types"
 
 const initialState = {
-    usuario:{}
+    usuario:{
+        usuario:'',
+        empresa:'',
+        modulosHabilitados:[],
+        perfiles : [],
+        perfil:'',
+        roles: [],
+        token : '',
+        cargando: false
+    }
 }
 
 export const userReducer = (state=initialState, action)=>{
@@ -13,6 +22,11 @@ export const userReducer = (state=initialState, action)=>{
             }
         case types.removerUsuario:
             return initialState
+        case types.asignarPerfil:
+            return{
+                ...state,
+                perfil : action.payload
+            }
         default:
             return state
     }

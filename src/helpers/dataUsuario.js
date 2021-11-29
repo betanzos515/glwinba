@@ -32,6 +32,7 @@ export const cargaUsuarios = [
         empresa:'empresaPrueba01',
         modulosHabilitados:[],
         perfiles : ['cliente','proveedor'],
+        perfil:'',
         roles: [],
         token : '',
         cargando: false
@@ -40,16 +41,18 @@ export const cargaUsuarios = [
         usuario:'prueba@prueba.com',
         empresa:'empresaPrueba02',
         modulosHabilitados:[],
-        roles : ['cliente'],
-        perfiles: [],
+        perfiles : ['cliente'],
+        perfil:'cliente',
+        roles: [],
         cargando: false
     },
     {
         usuario:'prueba03@prueba.com',
         empresa:'empresaPrueba03',
         modulosHabilitados:[],
-        roles : ['proveedor'],
-        perfiles: [],
+        perfiles : ['proveedor'],
+        perfil:'proovedor',
+        roles: [],
         cargando: false
     }
 ]

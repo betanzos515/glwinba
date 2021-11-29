@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { RolesScreen } from '../components/auth/RolesScreen';
 import { Main } from '../components/UI/Main';
+// import { PublicRoute } from './PublicRoute';
 
 export const SelectRoutes = () => {
-    const { roles } = useSelector(state => state.user);
+    
+    const { usuario } = useSelector(state => state.user);
+    const { perfiles } = usuario;
+    const [ perfilesState, setPerfilesState ] = useState([]);
+    console.log(perfilesState);
+    useEffect(() => {
+        setPerfilesState(perfiles);
+    }, [perfiles])
+    
     return (
-        <>
+        <div>
             <Routes>
-                <Route path='/dashboard' element={ <Main/> }/>
-                <Route path='/roles' element={ <RolesScreen/> }/>
-            {
-                (roles.length >= 2) ?  <Route path='/' element={<Navigate replace to='/roles'/>} />  : <Route path='/' element={<Navigate replace to='/dashboard' />} />
-            }       
+                <Route path='/perfiles' replace element={ <RolesScreen/> }/>
+                <Route path='/dashboard' replace element={ <Main/> }/>
+                <Route path='/' replace element={ <Main/> }/>
             </Routes>
-        </>
-
+        </div>
     )
 }
