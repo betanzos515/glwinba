@@ -11,3 +11,10 @@ export const asignarUsuario = ( usuario ) =>{
         payload: obtenerUsuario(usuario)[0]
     }
 }
+
+export const asignarPerfil = ( perfil )=>{
+    return{
+        type: types.asignarPerfil,
+        payload: perfil
+    }
+}

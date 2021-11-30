@@ -6,12 +6,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { iniciarLogin, autenticarUsuario, terminoLogin } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
 import { asignarUsuario } from '../../actions/user';
-
+import { types } from '../../types/types';
 
 export  const LoginScreen = ( ) => {
     
+
     /* Globales */
     const dispatch = useDispatch();
+    
     const { error, mensaje } = useSelector(state => state.ui);
     
     const [  values, handleInputChange, resetForm ] = useForm({
@@ -27,14 +29,16 @@ export  const LoginScreen = ( ) => {
         dispatch(iniciarLogin());
         const resultado = await autenticarUsuario(usuario,password);
         if(resultado){
+            localStorage.setItem('estadoLoggin',JSON.stringify({cargando:'false', isLogged:true}));
             dispatch(asignarUsuario(usuario));
+            dispatch({ type: types.login });
             console.log('Usuario asignado...');
         }else{
             console.log('Error de autenticación...');
+            resetForm();
         }
 
         dispatch(terminoLogin());
-        resetForm();
     }
 
     return (

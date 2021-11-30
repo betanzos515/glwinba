@@ -7,10 +7,10 @@ export const types = {
 
     asignarUsuario:'[ USER ] asignarUsuario',
     asignarRoles: '[ USER ] asignarRoles',
-    asignarPerfiles : '[ USER ] asignarPerfiles',
+    asignarPerfil : '[ USER ] asignarPerfiles',
     asignarModulos: '[ USER ] asignarModulos',
     removerUsuario : '[ USER ] removerUsuario',
- 
+
     establecerError: '[ UI ] establecerError',
     removerError: '[ UI ] removerError'
 

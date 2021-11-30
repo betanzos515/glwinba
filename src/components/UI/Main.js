@@ -1,34 +1,40 @@
-import React from 'react'
-import { Header } from '../UI/Header';
+import { useEffect } from 'react'
 import '../../styles/UI/Main.css';
+
+import { Header } from '../UI/Header';
 import { Titulo } from './Titulo';
 import { Tablero } from '../Tablero/Tablero';
-import { useSelector } from 'react-redux';
-import { RolesScreen } from '../auth/RolesScreen';
 
-const data = {
-    grupoEmpresarial:'Grupo Empresarial DEMO',
-    usuario:'Usuario SE 01',
-    rol:'Cliente'
-}
+import { useNavigate } from 'react-router';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { asignarPerfil } from '../../actions/user';
+
 
 export const Main = () => {
-    const { grupoEmpresarial, usuario, rol } = data;
 
-    const { roles } = useSelector(state => state.user);
-    let componente = null;
-    if(roles.length > 2){
-        console.log('Dos roles')
-        componente = <RolesScreen />
-    }else{
-        componente = (
+    const { usuario : user } = useSelector(state => state.user);
+    const { perfiles, perfil, empresa, usuario } = user;
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if(perfiles.length === 2 && perfil===''){
+            navigate('/perfiles',{replace:true});
+        }else{
+            dispatch(asignarPerfil( perfil ));
+        }
+    },[navigate, perfiles, dispatch, perfil])
+
+    return (
         <>
             <Header/>
             <div className='main'>
                 <div className='info'>
-                    <p>{grupoEmpresarial}</p>
+                    <p>{empresa}</p>
                     <p>{usuario}</p>
-                    <p>{rol}</p>
+                    <p>{perfil}</p> 
                 </div>
                 <div className="contenedor">
                     <Titulo texto='Soluciones Tecnológicas'/>
@@ -36,9 +42,5 @@ export const Main = () => {
                 </div>
             </div>
         </>
-        )
-    }
-    console.log(roles);
-
-    return componente;
+    );
 }
