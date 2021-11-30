@@ -1,12 +1,13 @@
 import logo from '../../imagenes/glwinba.png';
 import '../../styles/loginStyles.css';
 
-
-import { useDispatch, useSelector } from 'react-redux';
-import { iniciarLogin, autenticarUsuario, terminoLogin } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
 import { asignarUsuario, obtenerUsuario } from '../../actions/user';
+
+import { iniciarLogin, autenticarUsuario, terminoLogin } from '../../actions/auth';
+import { useDispatch, useSelector } from 'react-redux';
 import { types } from '../../types/types';
+import { Mensaje } from '../UI/Mensaje';
 
 export  const LoginScreen = ( ) => {
     
@@ -44,6 +45,7 @@ export  const LoginScreen = ( ) => {
 
     return (
         <div className="login-container">
+            { error ? <Mensaje /> : null}
            <img src={ logo } alt="Logo GLWinba"/>
            <form action="#">
                 { error ? <p>{ mensaje }</p> : null }

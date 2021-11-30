@@ -46,10 +46,27 @@ h1{
   margin-bottom: 5rem;
 }
 
-.error{
-  background: rgba(255, 49, 49, 0.59);
+.error , .succes{
   padding: 1.2rem;
+  position: absolute;
   border-radius: 5px;
   color: white;
   font-weight: bold;
+  font-size: 2.5rem;
+  right: 1rem;
+  top:1rem;
+}
+
+.fas, .far{
+  font-size: 2.5rem;
+  margin: 0 1rem 0 0
+}
+
+.error{
+  background: rgba(255, 49, 49, 1);
+
+}
+.succes{
+  background: rgb(30, 187, 9);
+
 }

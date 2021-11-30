@@ -6,7 +6,7 @@ const peticionLogin = ( usuario, password )=>{
         setTimeout(()=>{
             const resultado = usuariosDemo.some( users => users.usuario === usuario && users.password === password ); 
             resolve(resultado);
-        },3000);
+        },1500);
     }))
 }
 

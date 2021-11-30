@@ -40,7 +40,7 @@ export const AppRoute = () => {
                 }/>
                 <Route path='/*' element={
                     <PrivateRoute>
-                        <SelectRoutes />
+                        <SelectRoutes/>
                     </PrivateRoute>
                 }/>
            </Routes>
