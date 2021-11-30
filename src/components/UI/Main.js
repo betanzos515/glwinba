@@ -1,33 +1,17 @@
-import { useEffect } from 'react'
 import '../../styles/UI/Main.css';
 
 import { Header } from '../UI/Header';
 import { Titulo } from './Titulo';
 import { Tablero } from '../Tablero/Tablero';
 
-import { useNavigate } from 'react-router';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { asignarPerfil } from '../../actions/user';
-
+import { useSelector } from 'react-redux';
 
 export const Main = () => {
 
-    const { usuario : user } = useSelector(state => state.user);
-    const { perfiles, perfil, empresa, usuario } = user;
-    const navigate = useNavigate();
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        if(perfiles.length === 2 && perfil===''){
-            navigate('/perfiles',{replace:true});
-        }else{
-            dispatch(asignarPerfil( perfil ));
-        }
-    },[navigate, perfiles, dispatch, perfil])
-
-    return (
+    const { usuario : user } = useSelector( state => state.user );
+    const { perfil, empresa, usuario } = user;
+    
+    return(
         <>
             <Header/>
             <div className='main'>

@@ -22,6 +22,12 @@ export const terminoLogin = () =>{
     }
 }
 
+export const cerrarSesion = ()=>{
+    return{
+        type: types.logout
+    }
+}
+
 export const autenticarUsuario = async ( usuario, password )=>{
     return await peticionLogin( usuario, password );
 }

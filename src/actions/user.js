@@ -1,7 +1,7 @@
 import { cargaUsuarios } from '../helpers/dataUsuario';
 import { types } from '../types/types';
 
-const obtenerUsuario = (usuario)=>{
+export const obtenerUsuario = ( usuario )=>{
     return cargaUsuarios.filter(user=> user.usuario === usuario);
 }
 
