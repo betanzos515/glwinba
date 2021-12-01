@@ -1,0 +1,45 @@
+.navegacion-se{
+    display: flex;
+    width: 70%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 5px
+}
+
+.dueDiligence, .registroControl, .entregable{
+    padding: 1rem 6rem;
+    border-width: 2px;
+    border-style: solid;
+}
+.dueDiligence{
+    border-color: var(--bgAzul);
+    color: var(--bgAzul)
+}
+
+.dueDiligence-active{
+    background: var(--bgAzul);
+    color: white;
+}
+
+.registroControl{
+    
+    border-color: (--bgVerde);
+    color: var(--bgVerde);
+}
+
+.registroControl-active{
+    background: var(--bgVerde);
+    color: white;
+}
+
+.entregable{
+    border-color: var(--bgNaranja);
+    color: var(--bgNaranja);
+}
+
+.entregable-active{
+    background: var(--bgNaranja);
+    color: white;
+}

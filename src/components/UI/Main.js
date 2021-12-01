@@ -13,7 +13,6 @@ import { Servicios } from "../productos/ServiciosEspecializados/Servicios";
 export const Main = () => {
   const { usuario: user } = useSelector((state) => state.user);
   const { perfil, empresa, usuario } = user;
-
   return (
     <>
       <Header />
@@ -25,13 +24,10 @@ export const Main = () => {
         </div>
         <div className="contenedor">
           <Routes>
+          
             <Route path='/productos/perfiles' replace element={ <RolesScreen /> } />
             <Route path='/productos/servicios' replace element={ <Servicios /> } />
-            <Route
-              path="/" 
-              replace
-              element={<SolucionesTecnologicas />}
-            />
+            <Route path="/*" replace element={<SolucionesTecnologicas />} />
           </Routes>
         </div>
       </div>

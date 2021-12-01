@@ -2,14 +2,13 @@ import { types } from '../types/types';
 import { usuariosDemo } from '../helpers/dataUsuario';
 
 const peticionLogin = ( usuario, password )=>{
-    return new Promise((resolve =>{
+    return new Promise(( resolve =>{
         setTimeout(()=>{
             const resultado = usuariosDemo.some( users => users.usuario === usuario && users.password === password ); 
             resolve(resultado);
         },1500);
     }))
 }
-
 
 export const iniciarLogin = () =>{
     return {

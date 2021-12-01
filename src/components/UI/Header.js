@@ -34,7 +34,7 @@ export const Header = () => {
             </div>
             <nav>
                 <ul>
-                    <Link to='/login' className='btnInicio' onClick={handleClick} >{mensaje}</Link>
+                    <Link to='/login' className=' btn btnInicio' onClick={handleClick} >{mensaje}</Link>
                 </ul>
             </nav>
         </header>

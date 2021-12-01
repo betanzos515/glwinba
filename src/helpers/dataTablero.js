@@ -104,3 +104,9 @@ export const data = [
         activo: false
     }
 ];
+
+export const rutas = () =>{
+    const arregloRutas = [];
+    data.map(item => arregloRutas.push({ ruta: `/productos/modulo/${item.titulo}` }));
+    return arregloRutas;
+}

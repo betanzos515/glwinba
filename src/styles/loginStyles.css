@@ -99,3 +99,8 @@ input:focus, select:focus, select, input.form-control:focus {
 .btnRoles:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
 }
+
+.disabled{
+    background: rgb(194, 194, 194) !important; 
+    color: rgb(175, 175, 175) !important;
+}
