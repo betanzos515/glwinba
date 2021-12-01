@@ -1,15 +1,6 @@
 import { types } from "../types/types"
 
 const initialState = {
-<<<<<<< HEAD
-    nombre: '',
-    empresa:'',
-    modulosHabilitados:[],
-    autenticado : false,
-    roles : ['proveedor','cliente'],
-    perfiles: [],
-    cargando: false
-=======
     usuario:{
         usuario:'',
         empresa:'',
@@ -20,7 +11,6 @@ const initialState = {
         token : '',
         cargando: false
     }
->>>>>>> c67cdedefb3e128a83d0ea19174bf450534aee11
 }
 
 export const userReducer = (state=initialState, action)=>{
