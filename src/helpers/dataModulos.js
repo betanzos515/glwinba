@@ -1,0 +1,66 @@
+const dataModulos = [
+    {
+        nombre:'servicios-especializados',
+        submodulos:[
+            {
+                nombre:'DUE DILIGENCE',
+                documentos:[
+                    {
+                        nombre:'Cuestionario de Entrada',
+                        permisos:[]
+                    },
+                    {
+                        nombre:'',
+                        permisos:[]
+                    },
+                    {
+                        nombre:'',
+                        permisos:[]
+                    },
+                    {
+                        nombre:'',
+                        permisos:[]
+                    },
+                    {
+                        nombre:'',
+                        permisos:[]
+                    },
+                    {
+                        nombre:'',
+                        permisos:[]
+                    },
+                    {
+                        nombre:'',
+                        permisos:[]
+                    },
+                    {
+                        nombre:'',
+                        permisos:[]
+                    },
+                    {
+                        nombre:'',
+                        permisos:[]
+                    }
+                ]
+            },
+            {
+                nombre:'REGISTRO Y CONTROL',
+                documentos:[
+                    {
+                        nombre:'',
+                        permisos:[]
+                    }
+                ]
+            },
+            {
+                nombre:'ENTREGABLE',
+                documentos:[
+                    {
+                        nombre:'',
+                        permisos:[]
+                    }
+                ]
+            }
+        ]
+    }
+]

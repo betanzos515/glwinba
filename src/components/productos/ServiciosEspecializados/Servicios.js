@@ -2,9 +2,8 @@ import { Titulo } from "../../UI/Titulo"
 import { Routes, Route } from "react-router"
 import { Navegacion } from "./componentes/Navegacion"
 import { Header } from "../../UI/Header";
-import { RegistroControl } from "./registro-control/RegistroControl";
-import { DueDiligence } from "./due-diligence/DueDiligence";
-import { Entregable } from "./entregable/Entregable";
+import { Tablero } from "./tablero/Tablero";
+import { SelecNav } from '../ServiciosEspecializados/componentes/SelecNav'
 
 
 export const Servicios = () => {
@@ -13,12 +12,13 @@ export const Servicios = () => {
             <Header />
             <Titulo texto='Servicios Especializados' />
             <Navegacion />
-            <div>
+            <SelecNav />
+            <div className='container-servicios'>
                 <Routes>
-                    <Route path='/dueDiligence' element={ <DueDiligence /> } /> 
-                    <Route path='/registroControl' element={ <RegistroControl /> } /> 
-                    <Route path='/entregable' element={ <Entregable /> } />
-                    <Route path='/' element={ <DueDiligence /> } />
+                    <Route path='/dueDiligence' element={ <Tablero data='dueDiligence'/> } /> 
+                    <Route path='/registroControl' element={ <Tablero data='registro y control'/> } /> 
+                    <Route path='/entregable' element={ <Tablero data='Entregable'/> } />
+                    <Route path='/' element={ <Tablero /> } />
                 </Routes>
             </div>
         </div>

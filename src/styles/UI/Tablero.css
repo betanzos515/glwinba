@@ -6,3 +6,9 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.far-servicios{
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    font-weight: lighter;
+}
