@@ -1,31 +1,4 @@
 
-/*
-    const data = {
-        usuario:'',
-        nombre,
-        id,
-        empresa:'',
-        rfc,
-        modulosHabilitados:[
-            {
-                id:'',
-                permisos:'',
-                submodulos:[
-                    {
-                        id,
-                        permisos:[],
-                        documentos:[]
-                    }
-                ],
-                documentos:[]
-            }
-        ],
-        roles : ['cliente','proveedor'],
-        perfiles: [],
-        cargando: false
-    }
-*/
-
 export const cargaUsuarios = [
     {
         usuario:'pruebaAmbos@prueba.com',

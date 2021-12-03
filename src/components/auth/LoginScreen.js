@@ -2,10 +2,10 @@ import logo from '../../imagenes/glwinba.png';
 import '../../styles/loginStyles.css';
 
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, ctor } from 'react-redux';
 import { iniciarLogin, autenticarUsuario, terminoLogin } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
-import { asignarUsuario } from '../../actions/user';
+import { asignarUsuario, obtenerUsuario } from '../../actions/user';
 import { types } from '../../types/types';
 
 export  const LoginScreen = ( ) => {
@@ -32,6 +32,7 @@ export  const LoginScreen = ( ) => {
             localStorage.setItem('estadoLoggin',JSON.stringify({cargando:'false', isLogged:true}));
             dispatch(asignarUsuario(usuario));
             dispatch({ type: types.login });
+            console.log(obtenerUsuario(usuario)[0]);
             console.log('Usuario asignado...');
         }else{
             console.log('Error de autenticación...');

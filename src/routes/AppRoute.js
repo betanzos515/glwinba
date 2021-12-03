@@ -8,22 +8,25 @@ import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { SelectRoutes } from './SelectRoutes';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { types } from '../types/types';
 
 
 export const AppRoute = () => {
-    
-    const auth = useSelector(state=> state.auth);
-    console.log(auth);
+
+    //eslint-disable-next-line
     const dispatch = useDispatch();
 
     useEffect(()=>{
         const auth = JSON.parse(localStorage.getItem('estadoLoggin'));
+        const usuarioStorage = JSON.parse(localStorage.getItem('usuarioActual'))
         const { isLogged } = auth;
-        if(isLogged){
-            console.log(`El usuario ah cambiado`);
+        if(isLogged && usuarioStorage){
             dispatch({type:types.login});
+            dispatch({
+                type: types.asignarUsuario,
+                payload: usuarioStorage
+            })
         }
     //eslint-disable-next-line
     },[]);
@@ -32,7 +35,7 @@ export const AppRoute = () => {
             <Routes>
                 <Route path='/login' element={
                     <PublicRoute>
-                        <LoginScreen/>
+                        <LoginScreen />
                     </PublicRoute>
                 }/>
                 <Route path='/*' element={
