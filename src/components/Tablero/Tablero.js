@@ -7,7 +7,11 @@ export const Tablero = () => {
         <div className='tablero'>
            {
                data.map(item =>(
-                    <Modulo  key={item.id} titulo={item.titulo} bg={(item.activo === true) ? item.bg : item.bg = 'bgDeshabilitado'}/>
+                    <Modulo  
+                        key={item.id} 
+                        titulo={item.titulo} 
+                        bg={item.bg}
+                    />
                ))
            }
         </div>

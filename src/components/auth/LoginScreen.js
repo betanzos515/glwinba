@@ -35,9 +35,24 @@ export  const LoginScreen = ( ) => {
     const handleClick = async e => {
         e.preventDefault();
 
+        if(usuario==='' && password===''){
+            setErrorFomr({
+                error:true,
+                msg:'No pueden existir campos vacios'
+            })
+            setTimeout(()=>{
+                setErrorFomr({
+                    error:false,
+                    msg: ''
+                })
+            },2000);
+            return; 
+        }
+
+
         dispatch(iniciarLogin());
         const resultado = await autenticarUsuario(usuario,password);
-        if(resultado){
+        if(resultado && errorForm.error===false){
             localStorage.setItem('estadoLoggin',JSON.stringify({ cargando:'false', isLogged:true }));
             dispatch({ type: types.login });
             dispatch(asignarUsuario(usuario));

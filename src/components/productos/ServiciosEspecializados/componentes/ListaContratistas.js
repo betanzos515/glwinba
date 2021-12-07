@@ -49,7 +49,6 @@ export const ListaContratistas = () => {
         listaContratistas = contratistas.filter(item => item.nombre.includes(e.target.value) || item.estatus.includes(e.target.value))
         setClientes(listaContratistas);
     }
-
     return (
         <div className='lista-contratistas'>
             <div className='header-contratistas'>Contratistas</div>
@@ -57,13 +56,14 @@ export const ListaContratistas = () => {
                 <input 
                     type='text' 
                     placeholder='Filtrar por nombre o estatus'
-                    onChange={handleChange}
+                    onChange={(e)=>{
+                        handleChange(e);
+                    }}
                 />
                 <i className="fas fa-search"></i>
             </div>
             <div className='lista'>
                 <ul>
-                    
                     {
                         clientes.map(contratista=>(
                             <Contratista key={contratista.uuid} data={contratista}/>

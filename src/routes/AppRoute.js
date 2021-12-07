@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { SelectRoutes } from './SelectRoutes';
+import { SelectPublicRoutes } from './SelectPublicRoutes';
 
 import { useDispatch } from 'react-redux';
 import { types } from '../types/types';
@@ -33,9 +34,10 @@ export const AppRoute = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/login' element={
+                <Route path='/login/*' element={
                     <PublicRoute>
-                        <LoginScreen />
+                        {/* <LoginScreen /> */}
+                        <SelectPublicRoutes />
                     </PublicRoute>
                 }/>
                 <Route path='/*' element={

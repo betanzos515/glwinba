@@ -4,104 +4,98 @@ export const colores = [
     "bgAzul",
     "bgMorado",
     "bgDeshabilitado"
-
 ]
 
 export const data = [
     { 
         id:1, 
-        titulo:'Boveda Fiscal', 
+        titulo:'Servicios especializados', 
         bg:colores[0], 
-        activo: false
     },
     { 
         id:2, 
-        titulo:'Boveda de Materialidad', 
+        titulo:'Bóveda Fiscal', 
         bg:colores[1], 
-        activo: false
     },
     { 
         id:3, 
-        titulo:'Servicios Especializados',
+        titulo:'Bóveda fiscal de materialidad',
         bg:colores[2], 
-        activo: true
     },
     { 
         id:4, 
-        titulo:'Contabilidad Electrónica', 
+        titulo:'Bóveda fiscal de materialidad cliente', 
         bg:colores[3], 
-        activo: false
     },
     { 
         id:5, 
-        titulo:'DST Fiscal', 
+        titulo:'Contablidad electrónica', 
         bg:colores[3], 
-        activo: false
     },
     { 
         id:6, 
-        titulo:'ISR', 
+        titulo:'CCG', 
         bg:colores[2], 
-        activo: false
     },
     { 
         id:7, 
-        titulo:'Obligaciones Fiscales IVA', 
+        titulo:'DST fiscal nomina', 
         bg:colores[1], 
-        activo: false
     },
     { 
         id:8, 
-        titulo:'Comercio Exterior', 
+        titulo:'DST fiscal ISR', 
         bg:colores[0], 
-        activo: true
     },
     { 
-        id:9, titulo:'Listas Negras 69-B', 
+        id:9, 
+        titulo:'DST fiscal obligaciones fiscales IVA', 
         bg:colores[0], 
-        activo: false
     },
     { 
         id:10, 
-        titulo:'Complemento de Pago', 
+        titulo:'DST fiscal comercio exterior', 
         bg:colores[1], 
-        activo: false
     },
     { 
         id:11, 
-        titulo:'PLD', 
+        titulo:'DST fiscal 69B', 
         bg:colores[2], 
-        activo: false
     },
     { 
         id:12, 
-        titulo:'Consolidación', 
+        titulo:'DST fiscal complemento de pago', 
         bg:colores[3], 
-        activo: false
     },
     { 
         id:13, 
-        titulo:'Viaticos', 
+        titulo:'DST fiscal PLD', 
         bg:colores[3], 
-        activo: false
     },
     { 
         id:14, 
-        titulo:'Conciliación de Ingresos',
+        titulo:'DST fiscal consolidación',
         bg:colores[2], 
-        activo: true
     },
     { 
         id:15, 
-        titulo:'Secretaria Coorporativa', 
+        titulo:'DST fiscal viáticos', 
         bg:colores[1], 
-        activo: false
     },
     { 
         id:16, 
-        titulo:'Portal de Recursos Humanos', 
+        titulo:'Secretaría corporativa', 
         bg:colores[0], 
-        activo: false
+    },
+    { 
+        id:17, 
+        titulo:'Recursos humanos', 
+        bg:colores[0], 
+    },
+    { 
+        id:18, 
+        titulo:'Gestion de ODS', 
+        bg:colores[0], 
     }
 ];
 
