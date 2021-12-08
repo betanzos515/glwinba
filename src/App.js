@@ -6,9 +6,9 @@ import store from "./store/store";
 const init = () =>{
   return JSON.parse(localStorage.getItem('estadoLoggin')) ||  { cargando:false, isLogged:false }
 }
-function App() {
-  
+function App() { 
   localStorage.setItem('estadoLoggin',JSON.stringify(init()));
+  
   return (
     <Provider store={store}>
       <AppRoute/>

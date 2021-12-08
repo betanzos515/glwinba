@@ -4,9 +4,13 @@ const initialState = {
     error:false,
     mensaje:''
 }
+
 export const uiReducer = ( state = initialState, action )=>{
     switch(action.type){
         case types.establecerError : 
+            setTimeout(()=>{
+
+            },3000)
             return {
                 ...state,
                 error: true,

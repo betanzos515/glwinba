@@ -28,13 +28,13 @@ export const Header = () => {
     return (
         <header className='header'>
             <div className="logoContainer">
-                <Link to="/dashboard">
+                <Link to="/">
                     <img src={logoHeader} alt='logo'/>
                 </Link>
             </div>
             <nav>
                 <ul>
-                    <Link to='/login' className='btnInicio' onClick={handleClick} >{mensaje}</Link>
+                    <Link to='/login' className=' btn btnInicio' onClick={handleClick} >{mensaje}</Link>
                 </ul>
             </nav>
         </header>
