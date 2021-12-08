@@ -1,4 +1,5 @@
 .cliente{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     height: auto !important;
@@ -6,11 +7,15 @@
     padding:0 !important;
     margin-bottom: 2rem !important;
     color: black;
+    border-radius: 5px;
+    box-shadow: -3px 3px 4px rgba(0, 0, 0, 0.2) ; 
+
 }
 
 .cliente:hover{
     transform: scale(1,1.1);
 }
+
 .cliente p{
     width: 100%;
     margin-top: .5rem;
@@ -18,9 +23,32 @@
 }
 
 .incompleto{
-    background: rgba(255,122,0,40%);
+    background: rgba(255,122,0,30%);
+    color: white;
 }
 
 .completo{
    background: rgb(192, 254, 194); 
 }
+
+.capa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:none;
+    z-index: 3000;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

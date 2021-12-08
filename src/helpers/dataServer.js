@@ -59,3 +59,434 @@
     ]
 }
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+{
+    "razon_social": "Razon Social Proveedor dummy",
+    "rfc": "rfcProveedorDummy",
+    "fiel": "",
+    "ciec": "",
+    "usuario_perfil": [
+        2
+    ],
+    "relacionComercial": {
+        "fechaInicio": "2021-11-25 09:39:52",
+        "fechaFin": "2021-11-25 09:39:52"
+    },
+    "nombre_contacto_empresarial": "nombre proveedor contactoEmpresarial Dummy",
+    "email_empresarial": "emailEmpresarialProveedor@dominioDummy.com",
+    "email_personal": "emailPersonalProveedor@dominioDummy.com",
+    "nombre_personal": "nombre proveedor personal Dummy",
+    "contraseña": "C0nt@seña123Proveedor",
+    "permisos_modulos": [
+        {
+            "modulo_ID": 1,
+            "permisos": [
+                {
+                    "permiso_ID": 2
+                },
+                {
+                    "permiso_ID": 3
+                }
+            ],
+            "contratoServicio": {
+                "fechaInicio": "2021-11-25 09:39:52",
+                "fechaFin": "2021-11-25 09:39:52"
+            },
+            "permisos_subModulos": [
+                {
+                    "subModulo_ID": 2,
+                    "permisos": [
+                        {
+                            "permiso_ID": 2
+                        },
+                        {
+                            "permiso_ID": 3
+                        }
+                    ],
+                    "permisos_tiposDocumento": [
+                        {
+                            "tiposDocumentos_ID": 10,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 11,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 12,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 14,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 15,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 16,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 17,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 18,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 20,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 21,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 22,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 23,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 24,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 25,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "subModulo_ID": 3,
+                    "permisos": [
+                        {
+                            "permiso_ID": 2
+                        },
+                        {
+                            "permiso_ID": 3
+                        }
+                    ],
+                    "permisos_tiposDocumento": [
+                        {
+                            "tiposDocumentos_ID": 26,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 27,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 28,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        },
+                        {
+                            "tiposDocumentos_ID": 29,
+                            "permisos": [
+                                {
+                                    "permiso_ID": 1
+                                },
+                                {
+                                    "permiso_ID": 2
+                                },
+                                {
+                                    "permiso_ID": 3
+                                },
+                                {
+                                    "permiso_ID": 4
+                                },
+                                {
+                                    "permiso_ID": 5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+*/

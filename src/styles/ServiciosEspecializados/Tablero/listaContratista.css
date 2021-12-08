@@ -1,8 +1,9 @@
 .lista-contratistas{
-    flex-basis: calc(27% - 2rem);
+    flex-basis: calc(29%);
     border: 1px solid #BDBDBD;
     max-height: 70vh;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .lista-contratistas .header-contratistas{
@@ -19,10 +20,6 @@
 .lista-contratistas .lista{
     height: 50vh;
     overflow-x: hidden;
-}
-
-.lista-contratistas ul{
-
 }
 
 .lista-contratistas ul > *{
