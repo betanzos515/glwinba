@@ -1,9 +1,10 @@
-import React from 'react'
+import './styles/formAlta.css';
+
 
 export const FormAlta = () => {
     return (
-        <div>
-            Desde Form Alta
+        <div className='form-alta'>
+            
         </div>
     )
 }

@@ -79,3 +79,7 @@ h1{
 .servicios-especializados{
   text-align: center;
 }
+.contenedor{
+  width: 80%;
+  margin: 0 auto;
+}

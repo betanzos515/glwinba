@@ -13,7 +13,7 @@ const initialState = {
     }
 }
 
-export const userReducer = (state=initialState, action)=>{
+export const userReducer = ( state=initialState, action )=>{
     switch(action.type){
         case types.asignarUsuario:
             localStorage.setItem('usuarioActual',JSON.stringify(action.payload));
