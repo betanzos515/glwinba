@@ -8,8 +8,8 @@ import './styles/altaUsuario.css';
 export const AltaUsuario = () => {
     return (
         <>
+            <Header />
             <div className='contenedor'>
-                <Header />
                 <Titulo texto='Alta Usuario(s)'/>
                 <SelectCarga />
                 <FormAlta />
