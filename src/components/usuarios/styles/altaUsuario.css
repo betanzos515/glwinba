@@ -5,6 +5,10 @@
     gap: 3rem;
 }
 
+.alta{
+    margin-bottom: 4rem;
+}
+
 .contenedor > *{
     margin: 0;
 }

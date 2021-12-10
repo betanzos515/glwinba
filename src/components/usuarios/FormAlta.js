@@ -1,22 +1,20 @@
 import { InputGroup } from './InputGroup';
-import { Modulo } from './Modulo';
+import { ListaModulos } from './ListaModulos';
 import { SelectGroup } from './SelectGroup';
 import './styles/formAlta.css';
 
 
 export const FormAlta = () => {
+
     return (
         <>
             <div className='form-alta registro'>
                 <InputGroup texto='Grupo Empresarial'/>
                 <InputGroup texto='Razón Social'/>
-                
                 <div className='group-form'>
-                    <InputGroup
-                     texto='RFC'/>
-                    <SelectGroup texto='Perfíl' opciones={['Cliente','Proveedor']}/>
+                    <InputGroup texto='RFC'/>
+                    <SelectGroup texto='Perfíl' opciones={ ['Cliente','Proveedor'] }/>
                 </div>
-
                 <InputGroup texto='Nombre de Contacto Empresarial'/>
                 <InputGroup texto='Email de Contacto Empresarial'/>
                 <InputGroup texto='CIEC'/>
@@ -26,9 +24,8 @@ export const FormAlta = () => {
                 <InputGroup texto='Contraseña'/>
                 <InputGroup texto='Relación Comercial'/>
             </div>
-
-            <Modulo />
-
+            <ListaModulos />  
+            <button className='modulo-guardar'>Registrar</button>          
         </>
         
     )

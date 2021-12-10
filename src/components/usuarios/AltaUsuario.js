@@ -9,7 +9,7 @@ export const AltaUsuario = () => {
     return (
         <>
             <Header />
-            <div className='contenedor'>
+            <div className='contenedor alta'>
                 <Titulo texto='Alta Usuario(s)'/>
                 <SelectCarga />
                 <FormAlta />

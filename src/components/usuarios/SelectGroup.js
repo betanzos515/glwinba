@@ -1,4 +1,3 @@
-
 export const SelectGroup = ({ texto, opciones=[] }) => {
     let contador=0;
     return (
