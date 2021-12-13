@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { data } from "../../helpers/dataTablero"
 import { Permisos } from "../UI/Permisos";
 import { SelectGroup } from "./SelectGroup"
@@ -6,8 +5,6 @@ import { SelectGroup } from "./SelectGroup"
 const opciones = data.map(item => item.titulo);
 
 export const SubModulo = ({ titulo }) => {
-
-    const [ isSubModulos, setIsSubModulos ] = useState(true);
 
     const handleClick = e =>{
         console.log(e.target);

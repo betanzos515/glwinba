@@ -34,6 +34,7 @@ export const validarFormularioBlur = e =>{
                     msg:''
                 };
             }
+            
         case 'password':
             if(valor.length < 8 && valor !== '' ){
                 return{
@@ -48,4 +49,11 @@ export const validarFormularioBlur = e =>{
             }
         default: break;
     }
+}
+
+export const validarFormularioUsuario = valores => {
+    const keys = Object.keys(valores);
+    const validado = keys.map( item => valores[item] === '' );
+    return !validado.some(item => item === true);
+
 }

@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import { RadioButton } from './RadioButton';
 import './styles/permisos.css';
+import uuid from 'react-uuid';
 
 export const Permisos = () => {
     const permisos = ['Crear','Actualizar','Visualizar','Eliminar','Descargar'];
-    let contador = 0;
-    
+
+    const [ listaPermisos, asignarListaPermiso ] = useState([]);
+    console.log(listaPermisos);
     return (
         <div className='permisos'>
-            { permisos.map( item=> ( <RadioButton key={ contador++ } nombre={ item }/> ) ) }
+            { permisos.map( item=> ( <RadioButton key={ uuid() } setPermiso={asignarListaPermiso} permisos={listaPermisos}  nombre={ item }/> ) ) }
         </div>
     )
 }

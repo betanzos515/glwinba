@@ -1,15 +1,12 @@
-import { useState } from "react";
 import { data } from "../../helpers/dataTablero"
 import { Permisos } from "../UI/Permisos";
 import { ListaSubmodulos } from "./ListaSubmodulos";
 import { SelectGroup } from "./SelectGroup"
-import { SubModulo } from "./SubModulo";
 
 const opciones = data.map(item => item.titulo);
 
-export const Modulo = ({ titulo }) => {
+export const Modulo = ({ id, titulo }) => {
 
-    const [ isSubModulos, setIsSubModulos ] = useState(true);
     const handleClick = e =>{
         console.log(e.target);
     }
@@ -17,7 +14,7 @@ export const Modulo = ({ titulo }) => {
     return (
         <div className="form-alta mod">
             <div className="addModule">
-                <button onClick={ handleClick }><i className="fas fa-plus"></i></button> 
+                <button onClick={ handleClick }><i className="fas fa-plus"></i></button>
             </div>
             <SelectGroup 
                 texto={ titulo } 

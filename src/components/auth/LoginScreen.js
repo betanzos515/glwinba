@@ -49,9 +49,10 @@ export  const LoginScreen = ( ) => {
             return; 
         }
 
-
         dispatch(iniciarLogin());
+
         const resultado = await autenticarUsuario(usuario,password);
+
         if(resultado && errorForm.error===false){
             localStorage.setItem('estadoLoggin',JSON.stringify({ cargando:'false', isLogged:true }));
             dispatch({ type: types.login });
@@ -63,6 +64,7 @@ export  const LoginScreen = ( ) => {
             },2000);
             resetForm();
         }
+        
         dispatch(terminoLogin());
     }
 
