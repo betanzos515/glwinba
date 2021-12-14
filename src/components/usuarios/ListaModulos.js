@@ -22,7 +22,7 @@ export const ListaModulos = () =>{
             {!comenzar ? (boton) : null }
             { comenzar ? (
                 ListaModulos.map( modulo => (
-                    <Modulo key={ modulo.uuid } />    
+                    <Modulo key={ modulo.uuid } id={ modulo.uuid } />    
                 ))
             ): ''
             }
