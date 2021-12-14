@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+import { agregarModulo } from "../../actions/registrarUsuario";
 import { data } from "../../helpers/dataTablero"
 import { Permisos } from "../UI/Permisos";
 import { ListaSubmodulos } from "./ListaSubmodulos";
@@ -5,10 +7,12 @@ import { SelectGroup } from "./SelectGroup"
 
 const opciones = data.map(item => item.titulo);
 
-export const Modulo = ({ id, titulo }) => {
+export const Modulo = ({ titulo='' }) => {
+    
+    const dispatch = useDispatch();
 
     const handleClick = e =>{
-        console.log(e.target);
+        dispatch(agregarModulo());
     }
 
     return (
@@ -18,7 +22,7 @@ export const Modulo = ({ id, titulo }) => {
             </div>
             <SelectGroup 
                 texto={ titulo } 
-                opciones={opciones} 
+                opciones={ opciones } 
             />
             <Permisos />
             <ListaSubmodulos />

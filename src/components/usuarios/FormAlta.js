@@ -1,33 +1,35 @@
 import { useEffect, useState } from 'react';
-import { validarFormularioUsuario } from '../../helpers/helpers';
 import { useForm } from '../../hooks/useForm';
-import { Mensaje } from '../UI/Mensaje';
 import { InputGroup } from './InputGroup';
 import { ListaModulos } from './ListaModulos';
 import { SelectGroup } from './SelectGroup';
 
+//funciones de validación
+import { initialStateRegistroUsuario, validarFormularioUsuario, validarReglas } from '../../helpers/helpers';
+
+import { useDispatch } from 'react-redux';
+import { registroInfoUsuario } from '../../actions/registrarUsuario';
+
+
 import './styles/formAlta.css';
 
-
+/* 
+    Reglas para formar el rfc: 
+        1.- Entre 12 y 13 caracteres.
+        2.- Si tiene 12 caracteres los primeros 3 digitos son caracteres los 6 siguientes son números.
+        3.- Si tiene 13 caracteres los primeros 4 digitos son caracteres los 6 siguientes son números.
+*/
 export const FormAlta = () => {
-    const [ errorForm, setErroForm ] = useState({
+    
+    
+    const dispatch = useDispatch();
+
+    const [ errorForm, setErrorForm ] = useState({
         error: false,
         msg:''
     });
-    const [ values, handleInputChange, resetForm ] = useForm({
-        grupoEmpresarial:'',
-        razonSocial:'',
-        RFC:'',
-        perfíles:'',
-        nombreContactoEmpresarial:'',
-        emailContactoEmpresarial:'',
-        CIEC:'',
-        FIEL:'',
-        emailPersonal:'',
-        nombre:'',
-        password:'',
-        relacionComercial:''
-    });
+
+    const [ values, handleInputChange, resetForm ] = useForm(initialStateRegistroUsuario);
 
     const { 
         grupoEmpresarial,
@@ -41,24 +43,35 @@ export const FormAlta = () => {
         emailPersonal,
         nombre,
         password,
-        relacionComercia,
+        confirmarPassword,
+        relacionComercial,
     } = values;
 
-    const validarCampos = () =>{
-         return (( values.RFC >= 12 || values.RFC <= 13 ) && emailPersonal.includes('@') && emailContactoEmpresarial.includes('@'))
-    }
     useEffect(() => {
-
-        console.log(validarFormularioUsuario(values));
         if(validarFormularioUsuario(values)){
-            console.log(validarCampos());
+            const resultado = validarReglas( RFC, emailPersonal, emailContactoEmpresarial, password, confirmarPassword );
+            const [ validacion, mensaje ] = resultado;
+            if ( validacion ){
+                setErrorForm({
+                    error: false,
+                    msg:''
+                })
+                dispatch(registroInfoUsuario(values));
+                console.log('Dispatch lanzado....');
+            }else{
+                setErrorForm({
+                    error: true,
+                    msg: mensaje
+                })
+            }
         }
+
     // eslint-disable-next-line
-    }, [values])
+    }, [ values ])
 
     return (
         <>
-            { errorForm.error ? <p className='error'>{errorForm.msg}</p> : null }   
+            { errorForm.error ? <p className='error'>{ errorForm.msg }</p> : null }  
             <div className='form-alta registro'>
                 <InputGroup 
                     texto='Grupo Empresarial'
@@ -88,8 +101,8 @@ export const FormAlta = () => {
                         value={ perfíles }
                         accion={ handleInputChange } 
                         texto='Perfíl' 
-                        opciones={ ['Cliente','Proveedor'] 
-                    }/>
+                        opciones={ ['Cliente','Proveedor'] }
+                    />
                 </div>
                 <InputGroup 
                     name='nombreContactoEmpresarial' 
@@ -132,16 +145,24 @@ export const FormAlta = () => {
                     value={ password }
                     accion={ handleInputChange } 
                     texto='Contraseña'
+                    tipo={ 'password' }
+                />
+                <InputGroup 
+                    name='confirmarPassword' 
+                    value={ confirmarPassword }
+                    accion={ handleInputChange } 
+                    texto='Confirmar Contraseña'
+                    tipo={ 'password' }
                 />
                 <InputGroup 
                     name='relacionComercial' 
-                    value={ relacionComercia }
+                    value={ relacionComercial }
                     accion={ handleInputChange } 
                     texto='Relación Comercial'
                 />
             </div>
             <ListaModulos />  
-            <button className='modulo-guardar'>Registrar</button>          
+            <button className='modulo-guardar'>Guardar</button>          
         </>
         
     )

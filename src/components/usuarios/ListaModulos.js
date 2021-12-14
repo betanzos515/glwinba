@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { agregarModulo } from "../../actions/registrarUsuario";
+import { Modulo } from './Modulo';
 
 
 export const ListaModulos = () =>{
@@ -10,7 +11,8 @@ export const ListaModulos = () =>{
         setComenzar(true);
         dispatch(agregarModulo());            
     }
-
+    const { modulos : ListaModulos } = useSelector(state => state.registroUsuario);
+    const { uuid } = ListaModulos
     const boton = <button className='btnAgregarModulo modulo-guardar' onClick={ handleClick }>Agregar</button>;
 
 
@@ -19,7 +21,9 @@ export const ListaModulos = () =>{
             <h1 className='lista-modulos'>Modulos</h1>
             {!comenzar ? (boton) : null }
             { comenzar ? (
-                <h1>Comenzando</h1>
+                ListaModulos.map( modulo => (
+                    <Modulo key={ modulo.uuid } />    
+                ))
             ): ''
             }
         </div>

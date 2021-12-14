@@ -6,14 +6,15 @@ const registrarUsuario = {
     grupoEmpresarial:'',
     razonSocial:'',
     RFC:'',
-    Perfíl:'',
-    NombreContactoEmpresarial:'',
+    perfíles:'',
+    nombreContactoEmpresarial:'',
     emailContactoEmpresarial:'',
     CIEC:'',
     FIEL:'',
     emailPersonal:'',
-    Nombre:'',
-    Contraseña:'',
+    nombre:'',
+    password:'',
+    confirmarPassword:'',
     relacionComercial:'',
     modulos: []
 }
@@ -33,6 +34,7 @@ export const registroUsuarioReducer = ( state = registrarUsuario, action )=>{
                 emailPersonal,
                 nombre,
                 password,
+                confirmarPassword,
                 relacionComercial,
             } = action.payload;
             
@@ -50,6 +52,7 @@ export const registroUsuarioReducer = ( state = registrarUsuario, action )=>{
                 emailPersonal,
                 nombre,
                 password,
+                confirmarPassword,
                 relacionComercial,
            }
         case types.establecerModulo : 

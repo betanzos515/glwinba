@@ -3,7 +3,10 @@ import uuid from 'react-uuid';
 
 
 export const ListaSubmodulos = ({ isSubModulo }) =>{
-    const submodulos = [ <SubModulo key={uuid()} />, <SubModulo key={uuid()} />, <SubModulo key={uuid()} /> ];
+    let submodulos=[];
+    if(submodulos.length === 0){
+        return ''
+    }
     return (
         <div className='form-alta lista-submodulo'>
             { submodulos }
