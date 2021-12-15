@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { agregarModulo } from "../../actions/registrarUsuario";
 import { data } from "../../helpers/dataTablero"
 import { Permisos } from "../UI/Permisos";
-import { ListaSubmodulos } from "./ListaSubmodulos";
-import { SelectGroup } from "./SelectGroup"
+import { SelectGroup } from "./SelectGroup";
+import { ListaSubmodulos } from './ListaSubmodulos';
 
 const opciones = data.map(item => item.titulo);
 
@@ -22,6 +22,13 @@ export const Modulo = ({ titulo='', id }) => {
         dispatch(agregarModulo());
     }
 
+    useEffect(() => {
+       setState({
+           ...state,
+           uuid:id
+       }) 
+       //eslint-disable-next-line
+    },[state])
     return (
         <div className="form-alta mod">
             <div className="addModule">
@@ -33,6 +40,7 @@ export const Modulo = ({ titulo='', id }) => {
             />
             <Permisos />
             <ListaSubmodulos />
+            <button className="btn btnEliminarModulo" >Eliminar</button>
         </div>
     )
 }

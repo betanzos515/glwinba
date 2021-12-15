@@ -103,3 +103,10 @@
 h1.lista-modulos{
     margin-bottom:2rem;
 }
+
+.btnEliminarModulo{
+    background: var(--bgNaranja);
+    border: none;
+    color: white;
+    margin-top: 2rem;
+}
