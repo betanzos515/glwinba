@@ -44,3 +44,42 @@ export const usuariosDemo = [
         password:'empresaPrueba03',
     }
 ]
+
+export const domyAltaUsuario = {
+    uuid:null,
+    grupoEmpresarial:'',
+    razonSocial:'',
+    RFC:'',
+    Perfíl:'',
+    NombreContactoEmpresarial:'',
+    emailContactoEmpresarial:'',
+    CIEC:'',
+    FIEL:'',
+    emailPersonal:'',
+    Nombre:'',
+    Contraseña:'',
+    relacionComercial:'',
+    modulos: [
+        {   
+            uuid:null,
+            nombre:'',
+            permisos:[],
+            isSubmodulos: false,
+            listaSubmodulo:[
+                {
+                    uuid:null,
+                    nombreSubmodulo:'sub01',
+                    permisos:[],
+                    documentos : [
+                        {
+                            uui:null,
+                            nombre:'documento01',
+
+                        }
+                    ]
+                }
+            ]
+        }   
+    ]
+
+}

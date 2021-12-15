@@ -1,0 +1,56 @@
+{
+    "razon_social": "Razon Social dummy",
+    "rfc": "rfcDummy",
+    "fiel": "",
+    "ciec": "",
+    "usuario_perfil": [1,2],
+    "relacionComercial": {
+        "fechaInicio": "2021-11-25",
+        "fechaFin": "2021-11-25"
+    },
+    "nombre_contacto_empresarial": "nombre contactoEmpresarial Dummy",
+    "email_empresarial": "emailEmpresarial@dominioDummy.com",
+    "email_personal": "emailPersonal@dominioDummy.com",
+    "nombre_personal": "nombre personal Dummy",
+    "contraseña": "C0nt@seña123",
+    "modulos": [
+        {
+            "modulo_ID": 1,
+            "permisos": [1,2],
+            "contratoServicio": {
+                "fechaInicio": "2021-11-25 09:39:52",
+                "fechaFin": "2021-11-25 09:39:52"
+            },
+            "subModulos": [
+                {
+                    "subModulo_ID": 1,
+                    "permisos": [ 1,2 ],
+                    "documentos": [
+                        {
+                            "tip osDocumentos_ID": 1,
+                            "permisos": [1,2]
+                        },
+                        {
+                            "tiposDocumentos_ID": 2,
+                            "permisos": [1,2]
+                        }
+                    ]
+                },
+                {
+                    "subModulo_ID": 2,
+                    "permisos": [1,2],
+                    "documentos": [
+                        {
+                            "tiposDocumentos_ID": 1,
+                            "permisos": []
+                        },
+                        {
+                            "tiposDocumentos_ID": 2,
+                            "permisos": []
+                        }
+                    ]
+                }
+            ]
+        },
+    ]
+}

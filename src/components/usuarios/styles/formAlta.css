@@ -1,0 +1,105 @@
+.form-alta{
+    border: 1px solid var(--bordes);
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5)  ; 
+}
+
+.form-alta.registro{
+    width: 60%;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+}
+
+.form-alta.registro h1{
+    margin: 0;
+}
+
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.inputGroup h2{
+    font-size: 3rem;
+}
+
+.inputGroup input,
+.inputGroup select{
+    height: 4rem;
+    width: 100%;
+    padding-left: 1rem;
+    border: 1px solid var(--bordes);
+    font-size: 2.5rem;
+    margin-top: .5rem;
+    font-weight: bold;
+    color: var(--bgAzul);
+}
+
+.group-form{
+    display: flex;
+    gap: 1rem;
+}
+
+.modulos-usuario{
+    width: 60%;
+    padding: 1rem;
+}
+
+.mod{
+    box-shadow: none;
+    padding:1rem 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.mod .addModule{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mod .addModule button{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--bgAzul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    border:none;
+    color: white;
+    cursor: pointer;
+}
+
+.mod .addModule button i {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.subModulo{
+    margin: 2rem  1rem;
+    padding: 1rem;
+    background: #f1f1f1;
+    border-color: #bdbdbd;
+}
+
+.lista-submodulo{
+    margin-top: 2rem;
+}
+
+.modulo-guardar{
+    padding: 1rem 12rem;
+    background: var(--bgAzul);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+}
+
+h1.lista-modulos{
+    margin-bottom:2rem;
+}

@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 
-import { LoginScreen } from '../components/auth/LoginScreen';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { PublicRoute } from './PublicRoute';

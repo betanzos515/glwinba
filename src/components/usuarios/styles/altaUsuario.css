@@ -1,0 +1,43 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.alta{
+    margin-bottom: 4rem;
+}
+
+.contenedor > *{
+    margin: 0;
+}
+
+.individual, .masiva{
+    padding: .8rem 4rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.individual{
+    background: white;
+    border: 2px solid var(--bgAzul);
+    color: var(--bgAzul);
+}
+
+.individual-active{
+    background: var(--bgAzul);
+    color: white;
+}
+
+.masiva{
+    background: none;
+    border: 2px solid var(--bgNaranja);
+    color: var(--bgNaranja);
+}
+
+.masiva-active{
+    background: var(--bgNaranja);
+    color: white;
+}

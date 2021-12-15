@@ -34,6 +34,7 @@ export const validarFormularioBlur = e =>{
                     msg:''
                 };
             }
+            
         case 'password':
             if(valor.length < 8 && valor !== '' ){
                 return{
@@ -48,4 +49,58 @@ export const validarFormularioBlur = e =>{
             }
         default: break;
     }
+}
+
+//valida solo que todos los campos tengan valores
+export const validarFormularioUsuario = valores => {
+    const keys = Object.keys(valores);
+    const validado = keys.map( item => valores[item] === '' );
+    return !validado.some(item => item === true);
+
+}
+
+//validacion reglas  de campos, formulario de registro.
+export const validarReglas = (...args) =>{
+    const [ RFC, emailEmpresa, emailPersonal, password, confirmacion ] = args;
+    let validacion=null;
+    let mensaje= '';
+
+    //validacion rfc
+    const comprobacionRFC = /^[ña-z]{3,4}[0-9]{6}[0-9a-z]{3}$/i;
+    validacion = comprobacionRFC.test(RFC.trim());
+    
+    if(!validacion){ mensaje += `\nError ingresa un RFC válido.`; } 
+
+    //validacion emails
+    const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    validacion = ( emailRegex.test( emailEmpresa.trim() ) && emailRegex.test( emailPersonal.trim() )); 
+    
+    if(!validacion) { mensaje+= '\nError email invalido.'; }
+
+    //validacion contraseñas
+    validacion = (password.length >= 8)
+    if(!validacion) { mensaje += '\nError en la longitud de la contraseña.' }
+
+    validacion = ( password === confirmacion );
+     
+    if(!validacion){ mensaje += '\nError las contraseñas no inciden.' }
+
+    if(mensaje.length > 0) { validacion = false; }
+    return [ validacion, mensaje ];
+}
+
+export const initialStateRegistroUsuario = {
+    grupoEmpresarial:'',
+    razonSocial:'',
+    RFC:'',
+    perfíles:'',
+    nombreContactoEmpresarial:'',
+    emailContactoEmpresarial:'',
+    CIEC:'Default',
+    FIEL:'Default',
+    emailPersonal:'',
+    nombre:'',
+    password:'',
+    confirmarPassword:'',
+    relacionComercial:''
 }

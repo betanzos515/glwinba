@@ -52,8 +52,9 @@ h1{
 }
 
 .error , .succes{
+  max-width: 250px;
   padding: 1.2rem;
-  position: absolute;
+  position: fixed;
   border-radius: 5px;
   color: white;
   font-weight: bold;
@@ -78,4 +79,8 @@ h1{
 
 .servicios-especializados{
   text-align: center;
+}
+.contenedor{
+  width: 80%;
+  margin: 0 auto;
 }

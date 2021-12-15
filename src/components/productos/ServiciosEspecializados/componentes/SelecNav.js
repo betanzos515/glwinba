@@ -1,27 +1,32 @@
 import React from 'react'
+import uuid from 'react-uuid';
 import '../../../../styles/ServiciosEspecializados/SelectNav.css';
+
 const empresaContratante = [
     {
+        id: uuid(),
         valor:1,
         nombre: 'Empresa Contratante 01'
     },
     {
+        id: uuid(),
         valor:2,
         nombre: 'Empresa Contratante 02'
     },
     {
+        id: uuid(),
         valor:3,
         nombre: 'Empresa Contratante 03'
     }
 ]
-let contador = 0;
+
 export const SelecNav = () => {
     return (
         <div className='selectNav'> 
             <select className="select-form" id="empresa-contratante">
                 <option value="">Empresa Contratante</option>
                 { empresaContratante.map(item =>(
-                    <option key={contador++}>Primero</option>
+                    <option key={item.id}>Primero</option>
                 ))
                 }
             </select>

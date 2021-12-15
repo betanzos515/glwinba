@@ -1,0 +1,16 @@
+.permisos{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.radio input{
+    margin-right: .5rem;
+}
+
+.radio label{
+    font-size: 2rem;
+}
+.radio input:checked{
+    background: var(--bgAzul);
+}
