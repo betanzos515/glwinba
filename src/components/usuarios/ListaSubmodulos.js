@@ -1,14 +1,14 @@
+import { useSelector } from 'react-redux';
 import { SubModulo } from './SubModulo'
 
+export const ListaSubmodulos = ({ isSubmoludo }) =>{
 
-export const ListaSubmodulos = ( ) =>{
-    let submodulos=[];
-    if(submodulos.length === 0){
+    if(!isSubmoludo){
         return ''
     }
     return (
         <div className='form-alta lista-submodulo'>
-            { SubModulo }
+            <h2>SubModulo</h2>
         </div>
     )
 }

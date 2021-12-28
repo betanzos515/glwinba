@@ -25,6 +25,7 @@ export const types = {
     cargarUsuario: '[ registroUsuario ] registroUsuario',
     asignarUsuarioRegistro: '[ registroUsuario ] asignarUsuarioRegistro',
     establecerModulo: '[ registroUsuario ] establecerModulo',
+    eliminarModulo: '[ registroUsuario ] eliminarModulo',
     establecerSubModulo : '[ registroUsuario ] establecerSubmodulo',
     establecerDocumento : '[ registroUsuario ] establecerDocumento',
     agregarModulo: '[ registroUsuario ] agregarModulo',

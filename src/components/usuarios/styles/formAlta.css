@@ -13,7 +13,7 @@
 }
 
 .form-alta.registro h1{
-    margin: 0;
+    margin: 1rem 0rem 2rem 0rem;
 }
 
 .inputGroup{
@@ -59,8 +59,8 @@
 .mod .addModule{
     display: flex;
     justify-content: flex-end;
+    margin: 1rem 0rem;
 }
-
 .mod .addModule button{
     width: 2.5rem;
     height: 2.5rem;

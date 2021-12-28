@@ -5,7 +5,7 @@ export const SelectGroup = ({
     value,
     accion,
     texto,
-    opciones = []
+    opciones
 }) => {
 
     return (
@@ -14,7 +14,9 @@ export const SelectGroup = ({
             <select
                 name={ name } 
                 value={ value }
-                onChange={ accion } 
+                onChange={ e =>{
+                    accion(e);
+                }} 
             >
                 <option >--Selecciona una opcion--</option>
                 {opciones.map(item=>(

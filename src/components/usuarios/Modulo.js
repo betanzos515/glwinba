@@ -1,46 +1,65 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { agregarModulo } from "../../actions/registrarUsuario";
+import { agregarModulo, eliminarModulo } from "../../actions/registrarUsuario";
 import { data } from "../../helpers/dataTablero"
-import { Permisos } from "../UI/Permisos";
 import { SelectGroup } from "./SelectGroup";
 import { ListaSubmodulos } from './ListaSubmodulos';
+import { Permisos } from "./Permisos";
+import { useForm } from "../../hooks/useForm";
+import { initialStateModulo, isSubmodulosFunction } from "../../helpers/helpers";
+
 
 const opciones = data.map(item => item.titulo);
 
 export const Modulo = ({ titulo='', id }) => {
     
+    const [ values, handleInputChange, ] = useForm(initialStateModulo)
+    const { modulo, permisos, isSubmodulos, subMoludos } = values; 
+    console.log(id);
+    useEffect(() => {
+        console.log('Modulo...',modulo);
+        const submodulos = isSubmodulosFunction( modulo );
+        if(submodulos){
+            const { isSubmodulos } = submodulos;
+            console.log(isSubmodulos);
+        }
+    }, [modulo])
+
     const dispatch = useDispatch();
-    const [ state, setState ] = useState({
-        uuid:'',
-        nombre:'',
-        permisos:[],
-        isSubmodulos:false,
-        listaSubmodulo:[]
-    });
+
     const handleClick = e =>{
-        dispatch(agregarModulo());
+        const clases = e.target.classList;
+        
+        if(clases.contains('fas')){
+            console.log('agregar modulo');
+            dispatch(agregarModulo());
+        }
+        
+        if(clases.contains('btnEliminarModulo')){
+            dispatch(eliminarModulo(id));
+            console.log('Eliminar Modulo');
+        }
     }
 
-    useEffect(() => {
-       setState({
-           ...state,
-           uuid:id
-       }) 
-       //eslint-disable-next-line
-    },[state])
+    const handleChange = e =>{
+        console.log(e.target.value);
+    }
+    
     return (
         <div className="form-alta mod">
             <div className="addModule">
                 <button onClick={ handleClick }><i className="fas fa-plus"></i></button>
             </div>
             <SelectGroup 
-                texto={ titulo } 
-                opciones={ opciones } 
+               name='modulo' 
+               value={ modulo }
+               accion={ handleInputChange } 
+               texto='' 
+               opciones={ opciones }
             />
-            <Permisos />
+            <Permisos accion={ handleChange } />
             <ListaSubmodulos />
-            <button className="btn btnEliminarModulo" >Eliminar</button>
+            <button onClick={ handleClick } className="btn btnEliminarModulo" >Eliminar</button>
         </div>
     )
 }
