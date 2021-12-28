@@ -11,24 +11,19 @@ const opciones = data.map(item => item.titulo);
 export const Modulo = ({ titulo='', id }) => {
     
     const dispatch = useDispatch();
+    
     const [ state, setState ] = useState({
-        uuid:'',
+        uuid:id,
         nombre:'',
         permisos:[],
         isSubmodulos:false,
         listaSubmodulo:[]
     });
+
     const handleClick = e =>{
-        dispatch(agregarModulo());
+        dispatch( agregarModulo() );
     }
 
-    useEffect(() => {
-       setState({
-           ...state,
-           uuid:id
-       }) 
-       //eslint-disable-next-line
-    },[state])
     return (
         <div className="form-alta mod">
             <div className="addModule">
