@@ -2,7 +2,7 @@ import { types } from "../types/types";
 import uuid from "react-uuid";
 
 const registrarUsuario = {
-    uuid:null,
+    uuid:'',
     grupoEmpresarial:'',
     razonSocial:'',
     RFC:'',
@@ -40,7 +40,7 @@ export const registroUsuarioReducer = ( state = registrarUsuario, action )=>{
             
             return {
                 ...state,
-                uuid:uuid(),
+                uuid: uuid(),
                 grupoEmpresarial,
                 razonSocial,
                 RFC,
@@ -56,10 +56,15 @@ export const registroUsuarioReducer = ( state = registrarUsuario, action )=>{
                 relacionComercial,
            }
         case types.establecerModulo : 
-        return{
-            ...state,
-            modulos: [ ...state.modulos, action.payload ]
-        }
+            return{
+                ...state,
+                modulos: [ ...state.modulos, action.payload ]
+            }
+        case types.eliminarModulo:
+            return{
+                ...state,
+                modulos: state.modulos.filter( modulo => modulo.uuid !== action.payload)
+            }
         default:
             return state;
     }

@@ -1,114 +1,132 @@
-const modulos = [
+export const modulos = [
     {
         id:1,
         nombre:'Servicios especializados',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: true
     },
     {
         id:2,
         nombre:'Bóveda Fiscal',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:3,
         nombre:'Bóveda materialidad proveedores',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:4,
         nombre:'Bóvedad materialidad cliente',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:5,
         nombre:'Contablidad electrónica',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:6,
         nombre:'CCG',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:7,
         nombre:'DST fiscal nomina',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:8,
         nombre:'DST fiscal ISR',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:9,
         nombre:'DST fiscal obligaciones fiscales IVA',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:10,
         nombre:'DST fiscal comercio exterior',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:11,
         nombre:'DST fiscal 69B',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:12,
         nombre:'DST fiscal complemento de pago',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:13,
         nombre:'DST fiscal PLD',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:14,
         nombre:'DST fiscal consolidación',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:15,
         nombre:'DST fiscal viáticos',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:16,
         nombre:'Secretaría corporativa',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:17,
         nombre:'Recursos humanos',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
     {
         id:18,
         nombre:'Gestion de ODS',
-        permisos:[]
+        permisos:[],
+        isSubmodulos: false
     },
 ]
 
 const submoludos = [
         {   
-            id:01,
-            modulo:01,
+            id:1,
+            modulo:1,
             nombre:'DUE DILIGENCE',
             permisos:[],
             documentos:[]
         },
         {   
-            id:02,
-            modulo:01,
+            id:2,
+            modulo:1,
             nombre:'Registro y Control',
             permisos:[],
             documentos:[]
         },
         {
-            id:03,
-            modulo:01,
+            id:3,
+            modulo:1,
             nombre:'Entregable',
             permisos:[],
             documentos:[]
@@ -117,23 +135,23 @@ const submoludos = [
 
 const permisos = [
     {
-        id:01,
+        id:1,
         nombre:'crear'
     },
     {
-        id:02,
+        id:2,
         nombre:'actualizar'
     },
     {
-        id:03,
+        id:3,
         nombre:'visualizar'
     },
     {
-        id:04,
+        id:4,
         nombre:'eliminar'
     },
     {
-        id:05,
+        id:5,
         nombre:'decargar'
     }
 ]

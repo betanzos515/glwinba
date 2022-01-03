@@ -1,4 +1,6 @@
+import { modulos } from "./dataModulos"
 
+/*--------------------------------- Funciones de ayuda mensajes de error ------------------------------- */
 export const mensajeError = msg =>{
     return {
         msg,
@@ -14,6 +16,59 @@ export const mensajeSucces = msg =>{
         icono: 'far fa-check-circle'
     }
 }
+
+/*------------------------------------------------------------------------------------------------------- */
+
+
+/* ---------------------- Funciones ayuda  en FormRegistro --------------------------------------------------- */
+
+//estado inicial registro usuario
+export const initialStateRegistroUsuario = {
+    grupoEmpresarial:'',
+    razonSocial:'',
+    RFC:'',
+    perfíles:'',
+    nombreContactoEmpresarial:'',
+    emailContactoEmpresarial:'',
+    CIEC:'Default',
+    FIEL:'Default',
+    emailPersonal:'',
+    nombre:'',
+    password:'',
+    confirmarPassword:'',
+    relacionComercial:''
+}
+
+export const initialStateModulo = {
+    modulo:'',
+    permisos:'',
+    isSubmodulos: false,
+    subMoludos : []
+}
+
+//manejo submitPermisos
+export const permisos = [ 
+    {   
+        nombre:'Crear',
+        isChecked: false
+    },
+    {
+        nombre:'Actualizar',
+        isChecked: false
+    },
+    {
+        nombre:'Visualizar',
+        isChecked: false
+    },
+    {
+        nombre:'Eliminar',
+        isChecked: false
+    },
+    {
+        nombre:'Descargar',
+        isChecked: false
+    }
+];
 
 //funcion que valida localmente los valores de los inputs
 export const validarFormularioBlur = e =>{
@@ -34,7 +89,6 @@ export const validarFormularioBlur = e =>{
                     msg:''
                 };
             }
-            
         case 'password':
             if(valor.length < 8 && valor !== '' ){
                 return{
@@ -47,7 +101,6 @@ export const validarFormularioBlur = e =>{
                     msg:''
                 };
             }
-        default: break;
     }
 }
 
@@ -61,6 +114,7 @@ export const validarFormularioUsuario = valores => {
 
 //validacion reglas  de campos, formulario de registro.
 export const validarReglas = (...args) =>{
+    
     const [ RFC, emailEmpresa, emailPersonal, password, confirmacion ] = args;
     let validacion=null;
     let mensaje= '';
@@ -89,18 +143,11 @@ export const validarReglas = (...args) =>{
     return [ validacion, mensaje ];
 }
 
-export const initialStateRegistroUsuario = {
-    grupoEmpresarial:'',
-    razonSocial:'',
-    RFC:'',
-    perfíles:'',
-    nombreContactoEmpresarial:'',
-    emailContactoEmpresarial:'',
-    CIEC:'Default',
-    FIEL:'Default',
-    emailPersonal:'',
-    nombre:'',
-    password:'',
-    confirmarPassword:'',
-    relacionComercial:''
+//función que comprueba si el modulo tiene submodulos.
+export const isSubmodulosFunction = ( nombre='' )=> {
+    const  resultado = modulos.filter( modulo => modulo.nombre ===nombre )[0];
+    return ( resultado ) ? resultado.isSubmodulos : false
 }
+
+/* ----------------------------------------------------------------------------------- */
+

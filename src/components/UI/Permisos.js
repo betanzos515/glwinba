@@ -25,7 +25,7 @@ export const Permisos = () => {
     }
   ];
 
-  const [ listaPermisos , asignarListaPermiso ] = useState([]);
+//   const [ listaPermisos , asignarListaPermiso ] = useState([]);
   const [ isChecked , setIsChecked ] = useState( false );
 
   const handleChange = e =>{

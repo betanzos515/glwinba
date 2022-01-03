@@ -10,18 +10,10 @@ import { initialStateRegistroUsuario, validarFormularioUsuario, validarReglas } 
 import { useDispatch } from 'react-redux';
 import { registroInfoUsuario } from '../../actions/registrarUsuario';
 
-
 import './styles/formAlta.css';
 
-/* 
-    Reglas para formar el rfc: 
-        1.- Entre 12 y 13 caracteres.
-        2.- Si tiene 12 caracteres los primeros 3 digitos son caracteres los 6 siguientes son números.
-        3.- Si tiene 13 caracteres los primeros 4 digitos son caracteres los 6 siguientes son números.
-*/
 export const FormAlta = () => {
-    
-    
+        
     const dispatch = useDispatch();
 
     const [ errorForm, setErrorForm ] = useState({
@@ -29,7 +21,7 @@ export const FormAlta = () => {
         msg:''
     });
 
-    const [ values, handleInputChange, resetForm ] = useForm(initialStateRegistroUsuario);
+    const [ values, handleInputChange ] = useForm(initialStateRegistroUsuario);
 
     const { 
         grupoEmpresarial,
@@ -49,6 +41,7 @@ export const FormAlta = () => {
 
     useEffect(() => {
         if(validarFormularioUsuario(values)){
+            console.log('Disparada...');
             const resultado = validarReglas( RFC, emailPersonal, emailContactoEmpresarial, password, confirmarPassword );
             const [ validacion, mensaje ] = resultado;
             if ( validacion ){
@@ -65,7 +58,6 @@ export const FormAlta = () => {
                 })
             }
         }
-
     // eslint-disable-next-line
     }, [ values ])
 
@@ -79,14 +71,12 @@ export const FormAlta = () => {
                     value={ grupoEmpresarial }
                     accion={ handleInputChange } 
                 />
-                
                 <InputGroup 
                     name='razonSocial' 
                     value={ razonSocial }
                     accion={ handleInputChange }
                     texto='Razón Social'
                 />
-
                 <div 
                     className='group-form'
                 >
@@ -101,7 +91,7 @@ export const FormAlta = () => {
                         value={ perfíles }
                         accion={ handleInputChange } 
                         texto='Perfíl' 
-                        opciones={ ['Cliente','Proveedor'] }
+                        opciones={ ['Cliente','Proveedor','Cliente-Provedor'] }
                     />
                 </div>
                 <InputGroup 
@@ -164,6 +154,5 @@ export const FormAlta = () => {
             <ListaModulos />  
             <button className='modulo-guardar'>Guardar</button>          
         </>
-        
     )
 }

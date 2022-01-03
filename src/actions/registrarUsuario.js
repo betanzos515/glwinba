@@ -5,7 +5,7 @@ import { types } from "../types/types"
 export const agregarModulo = () =>{
     return{
         type: types.establecerModulo,
-        payload: {   
+        payload:{   
             uuid:uuid(),
             nombre:'',
             permisos:[],
@@ -19,5 +19,12 @@ export const registroInfoUsuario = info =>{
     return{
         type: types.registroInfoUsuario,
         payload: info
+    }
+}
+
+export const eliminarModulo = id => {
+    return {
+        type: types.eliminarModulo,
+        payload: id
     }
 }
