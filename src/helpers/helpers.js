@@ -39,13 +39,6 @@ export const initialStateRegistroUsuario = {
     relacionComercial:''
 }
 
-export const initialStateModulo = {
-    modulo:'',
-    permisos:'',
-    isSubmodulos: false,
-    subMoludos : []
-}
-
 //manejo submitPermisos
 export const permisos = [ 
     {   

@@ -1,7 +1,14 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { SubModulo } from './SubModulo'
 
-export const ListaSubmodulos = ({ isSubmoludo }) =>{
+export const ListaSubmodulos = ({ modulo='', isSubmoludo }) =>{
+
+    useEffect(()=>{
+        if(isSubmoludo){
+            console.log('Hola Mundo');
+        }
+    },[  ])
 
     if(!isSubmoludo){
         return ''

@@ -8,7 +8,7 @@ export const ListaModulos = () =>{
     const dispatch = useDispatch();
     
     const { modulos : ListaModulos } = useSelector(state => state.registroUsuario);
-    const[cargaModulo, setCargaModulo] = useState(false)
+    const [ cargaModulo, setCargaModulo ] = useState(false)
     const handleClick = () =>{
         dispatch(agregarModulo());
         setCargaModulo(true)           

@@ -3,12 +3,12 @@ import { permisos } from '../../helpers/helpers';
 import { RadioButton } from './RadioButton';
 import './styles/permisos.css';
 
-export const Permisos = ({ accion }) => {
+export const Permisos = ({ setListaPermisos }) => {
 
     const [ listaPermisos, asignarListaPermiso ] = useState(permisos);
     useEffect(() => {
         if(listaPermisos){
-            accion( listaPermisos )
+            setListaPermisos( listaPermisos )
         }
     }, [ listaPermisos ])
     return (
