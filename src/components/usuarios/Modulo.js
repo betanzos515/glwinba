@@ -6,23 +6,30 @@ import { SelectGroup } from "./SelectGroup";
 import { ListaSubmodulos } from './ListaSubmodulos';
 import { Permisos } from "./Permisos";
 import { useForm } from "../../hooks/useForm";
-import { isSubmodulosFunction } from "../../helpers/helpers";
+import { isSubmodulosFunction, obtenerSubmodulos } from "../../helpers/helpers";
 
 
-const opciones = data.map(item => item.titulo);
+const opciones = data.map(item => item.nombre);
 
 export const Modulo = ({ id }) => {
     
     const [ values, handleInputChange, ] = useForm({ modulo:'' });
     const [ isSubmodulos, setIsSubmodulo ] = useState(false);
     const [ permisos, setListaPermisos ] = useState([])
-
-    const { modulo } = values; 
-
-    useEffect(() => {
-        setIsSubmodulo(isSubmodulosFunction( modulo )); //enviamos el nombre del módulo.
-    }, [modulo])
     
+    const { modulo } = values; 
+    
+    useEffect(() => {
+        setIsSubmodulo(isSubmodulosFunction( modulo ));
+        console.log(permisos);
+    }, [modulo]);
+
+    useEffect(()=>{
+        if(isSubmodulos){
+
+        }
+    },[isSubmodulos])
+
     const dispatch = useDispatch();
 
     const handleClick = e =>{
@@ -58,7 +65,7 @@ export const Modulo = ({ id }) => {
                 setListaPermisos={ setListaPermisos } 
             />
             <ListaSubmodulos 
-                modulo={ values.modulo }
+                modulo={ modulo }
                 isSubmoludo={ isSubmodulos } 
             />
             <button 

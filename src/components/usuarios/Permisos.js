@@ -10,7 +10,7 @@ export const Permisos = ({ setListaPermisos }) => {
         if(listaPermisos){
             setListaPermisos( listaPermisos )
         }
-    }, [ listaPermisos ])
+    }, [ listaPermisos,setListaPermisos ])
     return (
         <div className='permisos'>
             { permisos.map( permiso => 

@@ -9,16 +9,17 @@ export const ListaModulos = () =>{
     
     const { modulos : ListaModulos } = useSelector(state => state.registroUsuario);
     const [ cargaModulo, setCargaModulo ] = useState(false)
-    const handleClick = () =>{
-        dispatch(agregarModulo());
-        setCargaModulo(true)           
-    };
-
+    
     useEffect(() => {
         if(ListaModulos.length === 0){
             setCargaModulo(false);
         }
     }, [ListaModulos])
+
+    const handleClick = () =>{
+        dispatch(agregarModulo());
+        setCargaModulo(true)           
+    };
 
     const boton = <button 
                     className='btnAgregarModulo modulo-guardar' 
@@ -28,7 +29,7 @@ export const ListaModulos = () =>{
     return (
         <div className='form-alta registro'>
             <h1 className='lista-modulos'>Modulos</h1>
-            { !cargaModulo ? ( boton ) : null }
+            { !cargaModulo ?  boton : null }
             { cargaModulo ? (
                 ListaModulos.map( modulo => (
                     <Modulo key={ modulo.uuid } id={ modulo.uuid } />

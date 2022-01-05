@@ -9,7 +9,7 @@ export const Tablero = () => {
                data.map(item =>(
                     <Modulo  
                         key={item.id} 
-                        titulo={item.titulo} 
+                        titulo={item.nombre} 
                         bg={item.bg}
                     />
                ))

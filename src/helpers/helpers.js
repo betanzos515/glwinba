@@ -1,4 +1,4 @@
-import { modulos } from "./dataModulos"
+import { modulos, submoludos } from "./dataModulos"
 
 /*--------------------------------- Funciones de ayuda mensajes de error ------------------------------- */
 export const mensajeError = msg =>{
@@ -20,7 +20,7 @@ export const mensajeSucces = msg =>{
 /*------------------------------------------------------------------------------------------------------- */
 
 
-/* ---------------------- Funciones ayuda  en FormRegistro --------------------------------------------------- */
+/* ---------------------- Funciones ayuda  en FormRegistro ----------------------------------------------- */
 
 //estado inicial registro usuario
 export const initialStateRegistroUsuario = {
@@ -94,6 +94,8 @@ export const validarFormularioBlur = e =>{
                     msg:''
                 };
             }
+        default:
+            return;
     }
 }
 
@@ -140,6 +142,11 @@ export const validarReglas = (...args) =>{
 export const isSubmodulosFunction = ( nombre='' )=> {
     const  resultado = modulos.filter( modulo => modulo.nombre ===nombre )[0];
     return ( resultado ) ? resultado.isSubmodulos : false
+}
+
+export const obtenerSubmodulos = ( nombre = '' )=>{
+    const modulo = modulos.filter( modulo => modulo.nombre === nombre )[0];
+    return modulo ? modulo.id : null;
 }
 
 /* ----------------------------------------------------------------------------------- */

@@ -9,92 +9,87 @@ export const colores = [
 export const data = [
     { 
         id:1, 
-        titulo:'Servicios especializados', 
+        nombre:'Servicios especializados',
         bg:colores[0], 
     },
     { 
         id:2, 
-        titulo:'Bóveda Fiscal', 
+        nombre:'Bóveda Fiscal',
         bg:colores[1], 
     },
     { 
         id:3, 
-        titulo:'Bóveda fiscal de materialidad',
+        nombre:'Bóveda materialidad',
         bg:colores[2], 
     },
     { 
         id:4, 
-        titulo:'Bóveda fiscal de materialidad cliente', 
+        nombre:'Contablidad electrónica',
         bg:colores[3], 
     },
     { 
         id:5, 
-        titulo:'Contablidad electrónica', 
+        nombre:'CCG',
         bg:colores[3], 
     },
     { 
         id:6, 
-        titulo:'CCG', 
+        nombre:'DST fiscal nomina',
         bg:colores[2], 
     },
     { 
         id:7, 
-        titulo:'DST fiscal nomina', 
+        nombre:'DST fiscal ISR',
         bg:colores[1], 
     },
     { 
         id:8, 
-        titulo:'DST fiscal ISR', 
+        nombre:'DST fiscal obligaciones fiscales IVA',
         bg:colores[0], 
     },
     { 
         id:9, 
-        titulo:'DST fiscal obligaciones fiscales IVA', 
+        nombre:'DST fiscal comercio exterior',
         bg:colores[0], 
     },
     { 
         id:10, 
-        titulo:'DST fiscal comercio exterior', 
+        nombre:'DST fiscal 69B',
         bg:colores[1], 
     },
     { 
         id:11, 
-        titulo:'DST fiscal 69B', 
+        nombre:'DST fiscal complemento de pago',
         bg:colores[2], 
     },
     { 
         id:12, 
-        titulo:'DST fiscal complemento de pago', 
+        nombre:'DST fiscal PLD',
         bg:colores[3], 
     },
     { 
         id:13, 
-        titulo:'DST fiscal PLD', 
+        nombre:'DST fiscal consolidación',
         bg:colores[3], 
     },
     { 
         id:14, 
-        titulo:'DST fiscal consolidación',
+        nombre:'DST fiscal viáticos',
         bg:colores[2], 
     },
     { 
         id:15, 
-        titulo:'DST fiscal viáticos', 
+        nombre:'Secretaría corporativa',
         bg:colores[1], 
     },
     { 
         id:16, 
-        titulo:'Secretaría corporativa', 
+        nombre:'Recursos humanos',
         bg:colores[0], 
     },
     { 
         id:17, 
-        titulo:'Recursos humanos', 
-        bg:colores[0], 
-    },
-    { 
-        id:18, 
-        titulo:'Gestion de ODS', 
+        nombre:'Gestion de ODS',
         bg:colores[0], 
     }
 ];
