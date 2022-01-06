@@ -20,7 +20,7 @@ export const SelectGroup = ({
             >
                 <option >--Selecciona una opcion--</option>
                 {opciones.map(item=>(
-                    <option key={uuid()} value={item}>{item}</option>
+                    <option key={ uuid() } value={item.nombre} id={ item.id }>{item.nombre}</option>
                 ))}
             </select>
         </div>

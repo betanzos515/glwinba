@@ -9,7 +9,7 @@ import { useForm } from "../../hooks/useForm";
 import { isSubmodulosFunction, obtenerSubmodulos } from "../../helpers/helpers";
 
 
-const opciones = data.map(item => item.nombre);
+const opciones = data.map(item => item);
 
 export const Modulo = ({ id }) => {
     
@@ -17,11 +17,12 @@ export const Modulo = ({ id }) => {
     const [ isSubmodulos, setIsSubmodulo ] = useState(false);
     const [ permisos, setListaPermisos ] = useState([])
     
+    const dispatch = useDispatch();
+
     const { modulo } = values; 
     
     useEffect(() => {
         setIsSubmodulo(isSubmodulosFunction( modulo ));
-        console.log(permisos);
     }, [modulo]);
 
     useEffect(()=>{
@@ -30,19 +31,16 @@ export const Modulo = ({ id }) => {
         }
     },[isSubmodulos])
 
-    const dispatch = useDispatch();
 
     const handleClick = e =>{
         const clases = e.target.classList;
         
         if(clases.contains('fas')){
-            console.log('agregar modulo');
             dispatch(agregarModulo());
         }
         
         if(clases.contains('btnEliminarModulo')){
             dispatch(eliminarModulo(id));
-            console.log('Eliminar Modulo');
         } 
     }
 
