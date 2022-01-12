@@ -1,42 +1,69 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { agregarModulo, eliminarModulo } from "../../actions/registrarUsuario";
 import { data } from "../../helpers/dataTablero"
 import { SelectGroup } from "./SelectGroup";
 import { ListaSubmodulos } from './ListaSubmodulos';
 import { Permisos } from "./Permisos";
 import { useForm } from "../../hooks/useForm";
-import { isSubmodulosFunction, obtenerSubmodulos } from "../../helpers/helpers";
-
+import { getIsSubmodulos, getSubmodulos, mensajeError, mensajeSucces } from "../../helpers/helpers";
+import { permisos } from "../../helpers/dataModulos";
+import { establecerError, removerError } from "../../actions/ui";
+import { Mensaje } from "../UI/Mensaje";
 
 const opciones = data.map(item => item);
 
 export const Modulo = ({ id }) => {
+
+    const auxiliar = {
+        nombre:'',
+        permisos:[],
+        isSubmodulos:false,
+        submodulos:[]
+    }
     
     const [ values, handleInputChange, ] = useForm({ modulo:'' });
     const [ isSubmodulos, setIsSubmodulo ] = useState(false);
-    const [ permisos, setListaPermisos ] = useState([])
-    
+    const [ ListaPermisos, setListaPermisos ] = useState([]);
+    const [ ListaSubmodulosState, setListaSubmodulos ] = useState([]);
+
+    // const {  nombre, permisos, isSubmodulo, submodulos } = useSelector(state => state.moduloActual);
     const dispatch = useDispatch();
+    const { error, mensaje } = useSelector(state => state.ui);
 
     const { modulo } = values; 
     
     useEffect(() => {
-        setIsSubmodulo(isSubmodulosFunction( modulo ));
-    }, [modulo]);
+        auxiliar.nombre = modulo;
+        setIsSubmodulo(getIsSubmodulos(modulo));
+    }, [modulo])
 
     useEffect(()=>{
-        if(isSubmodulos){
+        auxiliar.permisos = permisos;
+    },[ListaPermisos]);
 
-        }
-    },[isSubmodulos])
+    useEffect(()=>{
+        auxiliar.isSubmodulos = isSubmodulos
+        isSubmodulos ? setListaSubmodulos(getSubmodulos(modulo)) : setListaSubmodulos([])
+    },[isSubmodulos]);
 
-
+    useEffect(()=>{
+        auxiliar.submodulos = ListaSubmodulos
+    },[ListaSubmodulosState]);
+    
     const handleClick = e =>{
         const clases = e.target.classList;
-        
+
         if(clases.contains('fas')){
-            dispatch(agregarModulo());
+            if( modulo === '' || permisos === [] ){
+                dispatch(establecerError(' Existen campos vacios'));
+                setTimeout(()=>{
+                    dispatch(removerError());
+                },2000);
+                
+            }else{
+                dispatch(agregarModulo());
+            }
         }
         
         if(clases.contains('btnEliminarModulo')){
@@ -46,6 +73,7 @@ export const Modulo = ({ id }) => {
 
     return (
         <div className="form-alta mod">
+            { error ? <Mensaje mensaje={ mensajeError(mensaje) }/> : null}
             <div className="addModule">
                 <button 
                     onClick={ handleClick }

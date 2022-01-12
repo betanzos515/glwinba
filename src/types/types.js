@@ -35,4 +35,7 @@ export const types = {
     establecerPermisosSubmodulo:'[ registroUsuario ] establecerPermisoSubmodulo',
     establecerPermisosDocumento:'[ registroUsuario ] establecerPermisoDocumento',
 
+    //moduloActual
+    asignarModuloActual : '[ moduloActual ] asignarModuloActual',
+    borrarModuloActual : '[ moduloActual  ] borrarModuloActual'
 } 

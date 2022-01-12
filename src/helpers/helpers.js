@@ -139,14 +139,14 @@ export const validarReglas = (...args) =>{
 }
 
 //función que comprueba si el modulo tiene submodulos.
-export const isSubmodulosFunction = ( nombre='' )=> {
+export const getIsSubmodulos = ( nombre='' )=> {
     const  resultado = modulos.filter( modulo => modulo.nombre ===nombre )[0];
     return ( resultado ) ? resultado.isSubmodulos : false
 }
 
-export const obtenerSubmodulos = ( nombre = '' )=>{
+export const getSubmodulos = ( nombre = '' )=>{
     const modulo = modulos.filter( modulo => modulo.nombre === nombre )[0];
-    return modulo ? modulo.id : null;
+    return modulo.id === 1 ? submoludos : [];
 }
 
 /* ----------------------------------------------------------------------------------- */

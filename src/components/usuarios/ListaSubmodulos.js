@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { SubModulo } from './SubModulo'
+// import { useDispatch, useSelector } from 'react-redux';
+// import { SubModulo } from './SubModulo'
 
 export const ListaSubmodulos = ({ modulo='', isSubmoludo }) =>{
     if(!isSubmoludo){
