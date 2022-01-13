@@ -28,7 +28,9 @@ export const types = {
     eliminarModulo: '[ registroUsuario ] eliminarModulo',
     establecerSubModulo : '[ registroUsuario ] establecerSubmodulo',
     establecerDocumento : '[ registroUsuario ] establecerDocumento',
-    agregarModulo: '[ registroUsuario ] agregarModulo',
+
+    establecerInfoModulo: '[ registroUsuario ] establecerInfoModulo',
+    
     agregarSubModulo:'[ registroUsuario ] agregarSubmoludo',
     agregarDocumento: '[ registroUsuario ] agregarDocumento',
     establecerPermisosModulo: '[ registroUsuario ] establecerPermisoModulo',
@@ -36,6 +38,9 @@ export const types = {
     establecerPermisosDocumento:'[ registroUsuario ] establecerPermisoDocumento',
 
     //moduloActual
-    asignarModuloActual : '[ moduloActual ] asignarModuloActual',
-    borrarModuloActual : '[ moduloActual  ] borrarModuloActual'
+    setNombreModuloActual : '[ ModuloActual ] setInfoModuloActual',
+    setPermisosModuloActual: '[ ModuloActual ] setPermisosModuloActual',
+    setIsSubModulodModuloActual: '[ ModuloActual ] setIsSubModulodModuloActual',
+    setListaSubmodulosModuloActual: '[ ModuloActual ] setListaSubmodulosModuloActual'
+
 } 

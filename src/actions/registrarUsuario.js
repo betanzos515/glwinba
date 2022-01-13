@@ -28,3 +28,11 @@ export const eliminarModulo = id => {
         payload: id
     }
 }
+
+export const establecerInfoModulo = modulo =>{
+    console.log('Se recibio...',modulo);
+    return{
+        type: types.establecerInfoModulo,
+        payload: modulo
+    }
+}

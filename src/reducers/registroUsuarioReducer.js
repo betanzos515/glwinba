@@ -65,6 +65,11 @@ export const registroUsuarioReducer = ( state = registrarUsuario, action )=>{
                 ...state,
                 modulos: state.modulos.filter( modulo => modulo.uuid !== action.payload)
             }
+        case types.establecerInfoModulo:
+            return{
+                ...state,
+                modulos: state.modulos.map( item => (item.uuid === action.payload.id) ? action.payload : item )
+            }
         default:
             return state;
     }

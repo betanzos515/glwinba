@@ -9,18 +9,25 @@ const initialState = {
 
 export const moduloActual = (state = initialState, action)=>{
     switch(action.type){
-        case types.asignarModuloActual:
+        case types.setNombreModuloActual:
             return{
-               ...state,
-               nombre:action.payload.nombre,
-               permisos: action.payload.permisos,
-               isSubmodulo: action.payload.permisos,
-               submodulos: action.payload.submodulos
+                ...state,
+                nombre: action.payload
             }
-        case types.asignarPermisosModuloActual:
+        case types.setPermisosModuloActual:
             return{
                 ...state,
                 permisos: action.payload
+            }
+        case types.setIsSubModulodModuloActual:
+            return{
+                ...state,
+                isSubmodulo: action.payload
+            }
+        case types.setListaSubmodulosModuloActual:
+            return{
+                ...state,
+                submodulos: action.payload
             }
         default: 
             return state;
