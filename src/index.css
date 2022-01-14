@@ -46,11 +46,13 @@ code {
 }
 
 h1{
-  font-size: 2rem;
   font-size: 4.5rem;
   margin-bottom: 3rem;
 }
 
+h2{
+  font-size: 3.5rem;
+}
 .error , .succes{
   max-width: 250px;
   padding: 1.2rem;

@@ -1,22 +1,8 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { data } from "../../helpers/dataTablero"
-import { useForm } from "../../hooks/useForm";
-import { Permisos } from "./Permisos";
-import { SelectGroup } from "./SelectGroup"
-import { ListaDocumentos } from "./ListaDocumentos";
-const opciones = data.map(item => item.titulo);
+import { SelectGroup } from './SelectGroup';
+import { Permisos } from './Permisos';
 
 export const SubModulo = ({ listaSubmodulos }) => {
 
-    const [ values, handleInputChange, ] = useForm({ submodulo:'' });
-    const [ ListaPermisos, setListaPermisos ] = useState([]);
-    const [ ListaDocumento, setListaDocumentos ] = useState([]);
-    
-    const { submodulo } = values; 
-
-    const { error, mensaje } = useSelector(state => state.ui);
-    
     const handleClick = e =>{
         console.log(e.target);
     }
@@ -34,7 +20,6 @@ export const SubModulo = ({ listaSubmodulos }) => {
                 opciones={ listaSubmodulos }
             />
             <Permisos setListaPermisos={setListaPermisos} />
-            <ListaDocumentos/>
             <button 
                 className="btn btnEliminarModulo" 
             >Eliminar</button>

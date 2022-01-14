@@ -81,10 +81,11 @@
 }
 
 .subModulo{
-    margin: 2rem  1rem;
+    margin: 1rem  1rem;
     padding: 1rem;
-    background: #f1f1f1;
-    border-color: #bdbdbd;
+    background: #F8F8F8;
+    border: 1px solid #bdbdbd;
+    border-radius: 9px;
 }
 
 .lista-submodulo{

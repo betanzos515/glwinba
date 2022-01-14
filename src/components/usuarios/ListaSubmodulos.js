@@ -1,12 +1,13 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { SubModulo } from './SubModulo'
-
-export const ListaSubmodulos = ({ idModulo, setStateSubmodulos }) =>{
-    setStateSubmodulos(false);
-    const state = useSelector(state => state.)
+import { SubModulo } from './SubModulo';
+export const ListaSubmodulos = ({ isSubmodulos, idModulo, submodulos }) =>{
+    if(!isSubmodulos ){
+        return '';
+    }
+    console.log(idModulo)
     return (
         <div className='form-alta lista-submodulo'>
-            <h2>SubModulo</h2>
+            <h2 className='subtitulos' >Submódulos</h2>
+            { submodulos.map( modulo => <SubModulo id={ modulo.id } key={ modulo.id } listaSubmodulos={ submodulos } />) }
         </div>
     )
 }

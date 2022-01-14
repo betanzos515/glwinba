@@ -7,7 +7,6 @@ import { ListaSubmodulos } from './ListaSubmodulos';
 import { Permisos } from "./Permisos";
 import { useForm } from "../../hooks/useForm";
 import { getIsSubmodulos, getSubmodulos, mensajeError } from "../../helpers/helpers";
-import { permisos } from "../../helpers/dataModulos";
 import { establecerError, removerError } from "../../actions/ui";
 import { Mensaje } from "../UI/Mensaje";
 import { 
@@ -20,17 +19,17 @@ import {
 const opciones = data.map(item => item);
 
 export const Modulo = ({ id }) => {
+    
+    const dispatch = useDispatch();
 
     const [ values, handleInputChange, ] = useForm({ modulo:'' });
     const [ isSubmodulos, setIsSubmodulo ] = useState(false);
     const [ ListaPermisos, setListaPermisos ] = useState([]);
     const [ ListaSubmodulosState, setListaSubmodulos ] = useState([]);
-    const [ StateSubmodulos, setStateSubmodulos ] = useState(false)
     
-    const dispatch = useDispatch();
+    const { modulo } = values; 
     
     const { error, mensaje } = useSelector(state => state.ui);
-    const { modulo } = values; 
 
     useEffect(() => {
         setIsSubmodulo(getIsSubmodulos(modulo));
@@ -55,10 +54,12 @@ export const Modulo = ({ id }) => {
     },[ListaSubmodulosState]);
     
     const handleClick = e =>{
+        
         const clases = e.target.classList;
         const comprobarPermisos = ListaPermisos.reduce(( acum, item )=> acum + item.isChecked ,0);
 
         if(clases.contains('fas')){
+        
             if(modulo === '' && comprobarPermisos === 0){
                 dispatch(establecerError('Todos los campos son obligatorios'));
                     setTimeout(()=>{
@@ -111,9 +112,9 @@ export const Modulo = ({ id }) => {
                 setListaPermisos={ setListaPermisos } 
             />
             <ListaSubmodulos 
-                idModulo={id}
-                setStateSubmodulos={setStateSubmodulos}
-
+                isSubmodulos={ isSubmodulos }
+                idModulo={ id }
+                submodulos={ ListaSubmodulosState }
             />
             <button 
                 onClick={ handleClick } 

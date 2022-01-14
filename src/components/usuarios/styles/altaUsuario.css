@@ -41,3 +41,7 @@
     background: var(--bgNaranja);
     color: white;
 }
+
+.subtitulos{
+    margin-top: 2rem;
+}
