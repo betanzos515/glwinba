@@ -1,0 +1,38 @@
+.cargar{
+
+    border: 2.5px dashed var(--bgAzul);
+    border-radius: 10px;
+    width: 85%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    margin: 3rem auto;
+    position: relative;
+    color: var(--bgAzul);
+}
+
+
+
+.subir-archivo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.cargar:hover{
+    border: 3px dashed var(--bgAzul);
+    transform: scale(1.05);
+}
+
+.cargar i{
+    color: var(--bgAzul);
+    font-size: 10rem;
+}
+
+.cargar p{
+    margin-top: 1.5rem;
+    width: 40%;
+    font-size: 2rem;
+}

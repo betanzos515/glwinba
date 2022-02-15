@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export const Modulo = ({ titulo, bg='' }) => {
     return (
-        <Link to='/productos/servicios' className={ `modulo ${bg}` }>
+        <Link to='/productos/servicios/dueDiligence' className={ `modulo ${bg}` }>
             <i className="far-servicios far fa-address-card"></i>
             <p>{ titulo }</p>
         </Link>

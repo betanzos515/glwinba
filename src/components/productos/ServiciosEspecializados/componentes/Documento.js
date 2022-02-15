@@ -1,11 +1,12 @@
 import './styles/documento.css';
-export const Documento = ({ data }) => {
+export const Documento = ({ data , setCargarDocumento }) => {
 
     const { titulo, estatus, nombre,fecha,score } = data;
 
     const handleClick = e =>{
         console.log(e.target);
         console.log('Has dado click ...');
+        setCargarDocumento( state => !state);
     }
 
     return (

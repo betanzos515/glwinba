@@ -4,6 +4,7 @@ import { Navegacion } from "./componentes/Navegacion"
 import { Header } from "../../UI/Header";
 import { Tablero } from "./tablero/Tablero";
 import { SelecNav } from '../ServiciosEspecializados/componentes/SelecNav'
+import { Carga } from "./componentes/Carga";
 
 
 export const Servicios = () => {

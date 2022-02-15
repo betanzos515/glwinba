@@ -8,7 +8,6 @@ const init = () =>{
 }
 function App() { 
   localStorage.setItem('estadoLoggin',JSON.stringify(init()));
-  
   return (
     <Provider store={store}>
       <AppRoute/>

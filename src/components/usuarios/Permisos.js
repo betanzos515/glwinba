@@ -6,11 +6,13 @@ import './styles/permisos.css';
 export const Permisos = ({ setListaPermisos }) => {
 
     const [ listaPermisos, asignarListaPermiso ] = useState(permisos);
+    
     useEffect(() => {
         if(listaPermisos){
             setListaPermisos( listaPermisos )
         }
     }, [ listaPermisos,setListaPermisos ])
+    
     return (
         <div className='permisos'>
             { permisos.map( permiso => 

@@ -1,6 +1,8 @@
 .lista-documentos{
     flex-basis: calc(70%);
     border: 1px solid #bdbdbd;
+    height: 100% !important;
+    margin-top: 0 !important;
 }
 
 .header-documentos{
@@ -12,6 +14,7 @@
     color: white;
     font-weight: bold;
     height: 4rem;
+    width: 100%;
 }
 
 .lista-documentos .lista{

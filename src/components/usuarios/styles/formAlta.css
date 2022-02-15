@@ -88,6 +88,12 @@
     border-radius: 9px;
 }
 
+.subtitulo-submodulo{
+    color: var(--bgAzul);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
 .lista-submodulo{
     margin-top: 2rem;
 }
@@ -109,5 +115,22 @@ h1.lista-modulos{
     background: var(--bgNaranja);
     border: none;
     color: white;
+    margin-top: 2rem;
+}
+
+.listar-documentos{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    background: var(--bgAzul);
+    color: white;
+    border: none;
+}
+
+.lista-documentos{
+    border: 1px solid #cacaca;
+    box-shadow:none;
     margin-top: 2rem;
 }

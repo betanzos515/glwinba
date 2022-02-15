@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import '../../../../styles/ServiciosEspecializados/Tablero/listaDocumentos.css';
+import { Carga } from './Carga';
 import { Documento } from './Documento';
 export const ListaDocumentos = () => {
-
+    const [ cargarDocumento, setCargarDocumento ] = useState(false)
     const documentos = [
         {   
             id:'12312341',
@@ -42,14 +44,17 @@ export const ListaDocumentos = () => {
             <div className='header-documentos'>
                 Documentos
             </div>
-            <table className='lista'>
+            {}
+            { <table className='lista'>
                 { documentos.map( 
                     item =><Documento 
                                 key={item.id} 
                                 data={ item } 
+                                setCargarDocumento={ setCargarDocumento }
                             />) 
                 }
-            </table>
+            </table>}
+            { cargarDocumento ? <Carga setCargarDocumento={ setCargarDocumento }/> : null}
         </div>
     )
 }
